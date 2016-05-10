@@ -1,0 +1,171 @@
+﻿@model Hoond.Models.Sucursal
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="icon-delete"><h2>@Content.titulo_Eliminar Sucursal</h2></div>
+<h3>@Content.VistaEliminar</h3>
+<div class="grid">
+    <div class="grid_row">
+        @if(!ViewBag.isAdmin){
+            @Html.HiddenFor(model => model.idSucursal)
+        }else{
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.idSucursal)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.idSucursal)
+            </div>
+        </div>
+        }
+        @if(!ViewBag.isAdmin){
+            @Html.HiddenFor(model => model.Empresa.nombreEmpresa)
+        }else{
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Empresa.nombreEmpresa)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Empresa.nombreEmpresa)
+            </div>
+        </div>
+        }
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.TipoSucursal.descTipoSucursal)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.TipoSucursal.descTipoSucursal)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.nombreSucursal)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.nombreSucursal)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.telefonoSucursal)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.telefonoSucursal)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.dirSucursalPais)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.dirSucursalPais)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.dirSucursalEstado)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.dirSucursalEstado)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.dirSucursalMunicipio)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.dirSucursalMunicipio)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.dirSucursalCP)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.dirSucursalCP)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.dirSucursalColonia)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.dirSucursalColonia)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.dirSucursalCalle)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.dirSucursalCalle)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.dirSucursalNoExterior)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.dirSucursalNoExterior)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.dirSucursalNoInterior)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.dirSucursalNoInterior)
+            </div>
+        </div>  
+        @if(!ViewBag.isAdmin){
+            @Html.HiddenFor(model => model.Usuario.nombreUsuario)
+        }else{
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+            </div>
+        </div>
+        }
+        @if(!ViewBag.isAdmin){
+            @Html.HiddenFor(model => model.fecha_alta)
+        }else{
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.fecha_alta)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(!ViewBag.isAdmin){
+            @Html.HiddenFor(model => model.activo)
+        }else{
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.activo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        @using (Html.BeginForm()) 
+        {
+            @Html.AntiForgeryToken()
+            <div class="grid_item center">
+                <div class="center"><input type="submit" value="@Content.submit_Eliminar" /></div>
+            </div>
+            <div class="grid_item center">
+                <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+            </div>
+        }
+    </div>
+</div>

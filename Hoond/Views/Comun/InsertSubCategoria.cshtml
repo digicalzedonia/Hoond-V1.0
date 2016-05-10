@@ -1,0 +1,11 @@
+﻿@using Hoond.app_GlobalResources;
+@model Hoond.Models.SubCategoria
+<div id="DialogSubCategoria" title="@Content.titulo_CreaSubCategoria" style="display:none">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descSubCategoria)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.descSubCategoria, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.descSubCategoria)
+    </div>
+</div>

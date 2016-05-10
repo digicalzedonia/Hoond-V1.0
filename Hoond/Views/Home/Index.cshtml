@@ -1,0 +1,9 @@
+﻿@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Index";
+}
+<h2>@Content.index</h2>
+@if (!String.IsNullOrEmpty(ViewBag.msgError))
+{
+    @Html.Action("Mensaje", "Comun", new { msgError = ViewBag.msgError })
+}

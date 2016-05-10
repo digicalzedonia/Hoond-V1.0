@@ -1,0 +1,11 @@
+﻿@using Hoond.app_GlobalResources;
+@model Hoond.Models.Rol
+<div id="DialogRol" title="@Content.titulo_CreaRol" style="display:none">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descRol)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.descRol, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.descRol)
+    </div>
+</div>

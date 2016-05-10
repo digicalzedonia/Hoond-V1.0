@@ -1,0 +1,165 @@
+﻿@model Hoond.Models.Factura
+@using Hoond.app_GlobalResources;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="icon-details"><h2>@Content.titulo_DetalleFactura</h2></div>
+
+
+    <div class="grid">
+        <div class="grid_row md">
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.idFactura)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.idFactura)
+                </div>
+            </div>
+
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.archivoPDF)
+                </div>
+                <div class="display-field">
+                    @if (Model.archivoPDF != "")
+                    {
+                        using (Html.BeginForm("BajarPDF", "Factura"))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div>
+                                @Html.HiddenFor(model => model.Ruta.direccion)
+                                @Html.HiddenFor(model => model.archivoPDF)
+                                <input type="submit" id="Bajar" value="Exportar" title="Exportar" />
+                            </div>
+                        }
+                    }
+                    else
+                    { 
+                        <div>@Content.msg_SinArchivo</div>
+                    }
+                </div>
+            </div>
+
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.archivoXML)
+                </div>
+                <div class="display-field">
+                    @if (Model.archivoXML != ""  )
+                    { 
+                    using (Html.BeginForm("BajarXML", "Factura", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div>
+                            @Html.HiddenFor(model => model.Ruta.direccion)
+                            @Html.HiddenFor(model => model.archivoXML)
+                            <input type="submit" id="Bajar"  value="Exportar" title="Exportar" />
+                        </div>
+                    }
+                    }
+                    else
+                    {
+                        <div>@Content.msg_SinArchivo</div>
+                    }
+                  
+                </div>
+            </div>
+
+        </div>
+        <div class="grid_row md">
+        
+          
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.serie)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.serie)
+                </div>
+            </div>
+
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.foio)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.foio)
+                </div>
+            </div>
+
+        </div>
+        <div class="grid_row md">
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.fechaFactura)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.fechaFactura)
+                </div>
+            </div>
+
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.moneda)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.moneda)
+                </div>
+            </div>
+
+        </div>
+        <div class="grid_row md">
+
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.total)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.total)
+                </div>
+            </div>
+
+        </div>
+        <div class="grid_row md">
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.emisorRfc)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.emisorRfc)
+                </div>
+            </div>
+
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.emisorNombre)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.emisorNombre)
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+<br />
+
+  <div class="grid_item center">
+    <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+</div>
+</p>

@@ -1,0 +1,92 @@
+﻿@model Hoond.Models.Almacen
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Details";
+}
+<div class="icon-details"><h2>@Content.titulo_Detalle Almacen</h2></div>
+<div class="grid">
+    <div class="grid_row">
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.idAlmacen)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.idAlmacen)
+            </div>
+        </div>
+        }
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.TipoAlmacen.descTipoAlmacen)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.TipoAlmacen.descTipoAlmacen)
+            </div>
+        </div>  
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Empresa.nombreEmpresa)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Empresa.nombreEmpresa)
+            </div>
+        </div>
+        }
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Sucursal.nombreSucursal)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Sucursal.nombreSucursal)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.nombreAlmacen)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.nombreAlmacen)
+            </div>
+        </div>  
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.fecha_alta)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.activo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        <div class="grid_item center">
+            <span class="link-txt editr">@Html.ActionLink(Content.linkEditar, "Edit", new { id=Model.idAlmacen })</span>
+        </div>
+        <div class="grid_item center">
+            <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+        </div>
+    </div>
+</div>

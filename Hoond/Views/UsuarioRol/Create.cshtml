@@ -1,0 +1,52 @@
+﻿@model Hoond.Models.UsuarioRol
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Create";
+}
+<div class="icon-create"><h2>@Content.titulo_CreaUsuarioRol</h2></div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="grid">
+        <div class="grid_row">
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idUsuario, "Usuario1")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idUsuario", String.Empty)
+                @Html.ValidationMessageFor(model => model.idUsuario)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idRol, "Rol")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idRol", String.Empty)
+                @Html.ValidationMessageFor(model => model.idRol)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idEmpresa, "Empresa")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idEmpresa", String.Empty)
+                @Html.ValidationMessageFor(model => model.idEmpresa)
+            </div>
+        </div>
+        </div>
+        <div class="grid_row">
+            <div class="grid_item center">
+                <input type="submit" value="@Content.submit_Crear" />
+            </div>
+            <div class="grid_item center">
+                <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+            </div>
+        </div>
+    </diV>
+}
+
+

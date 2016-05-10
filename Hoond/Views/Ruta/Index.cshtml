@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Hoond.Models.Ruta>
+@using Hoond.app_GlobalResources;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Content.titulo_ListadoRuta</h2>
+
+<p class="link-txt create">
+    @Html.ActionLink(Content.linkCrear, "Create")
+</p>
+<table>
+    <thead>
+        <tr>
+           
+            <th data-hide="phone">
+                @Html.DisplayNameFor(model => model.descRuta)
+            </th>
+            <th data-hide="phone">
+                @Html.DisplayNameFor(model => model.direccion)
+            </th>
+           
+            <th data-hide="phone">
+                @Html.DisplayNameFor(model => model.activo)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.descRuta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.direccion)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.activo)
+            </td>
+            <td>
+                <div class="buttons">
+                    <a href="@Url.Action("Edit", new { id=item.idRuta })">
+                        <div class="edit"></div>
+                    </a>
+                    <a href="@Url.Action("Details", new { id=item.idRuta })">
+                        <div class="details"></div>
+                    </a>
+                    <a href="@Url.Action("Delete", new { id=item.idRuta })">
+                        <div class="delete"></div>
+                    </a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

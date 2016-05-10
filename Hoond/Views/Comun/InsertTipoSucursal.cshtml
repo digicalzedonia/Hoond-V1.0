@@ -1,0 +1,11 @@
+﻿@using Hoond.app_GlobalResources;
+@model Hoond.Models.TipoSucursal
+<div id="DialogTipoSucursal" title="@Content.titulo_CreaTipoSucursal" style="display:none">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descTipoSucursal)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.descTipoSucursal, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.descTipoSucursal)
+    </div>
+</div>

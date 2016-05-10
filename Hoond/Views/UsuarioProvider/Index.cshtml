@@ -1,0 +1,116 @@
+﻿@model PagedList.IPagedList<Hoond.Models.UsuarioProvider>
+@using Hoond.app_GlobalResources;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+<h2>@Content.titulo_ListUsuarioProvider</h2>
+@if (!String.IsNullOrEmpty(ViewBag.msgError))
+{
+    @Html.Action("Mensaje", "Comun", new { msgError = ViewBag.msgError })
+}
+@using (Html.BeginForm("Index", "UsuarioProvider", FormMethod.Get))
+{
+    @Html.Action("Buscar", "Comun", new { Campos = "Usuario.nombreUsuario,Provider1.provider1", Descripcion = "Nombre de Usuario,Provider" })
+}
+@using (Html.BeginForm("DeleteM", "UsuarioProvider", FormMethod.Post))
+{
+    <input type="submit" value="@Content.submit_EliminarM" id="cmdEliminar" class="delete-table" />
+	<table>
+		<thead>
+		<tr>
+            <th data-toggle="true">
+                <div id="@if (ViewBag.sortField == "Usuario.nombreUsuario") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().Usuario.nombreUsuario).ToString(), "Index", new { sortField = "Usuario.nombreUsuario", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+            <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "Provider1.provider1") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().Provider1.provider1).ToString(), "Index", new { sortField = "Provider1.provider1", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+            <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "id") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().id).ToString(), "Index", new { sortField = "tokenProvider", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "tokenProvider") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().tokenProvider).ToString(), "Index", new { sortField = "tokenProvider", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+            @if(ViewBag.isAdmin)
+            {
+	        <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "Usuario1.nombreUsuario") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().Usuario1.nombreUsuario).ToString(), "Index", new { sortField = "Usuario1.nombreUsuario", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+            }
+	        @if(ViewBag.isAdmin)
+            {
+            <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "fecha_alta") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().fecha_alta).ToString(), "Index", new { sortField = "fecha_alta", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+            }
+            @if(ViewBag.isAdmin)
+            {
+            <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "activo") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().activo).ToString(), "Index", new { sortField = "activo", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+            }
+    		<th data-hide="phone"></th>
+		</tr>
+		</thead>
+		<tbody>
+	
+	@foreach (var item in Model) {
+		<tr>
+		    <td>
+				@Html.DisplayFor(modelItem => item.Usuario.nombreUsuario)
+			</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Provider1.provider1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+	        <td>
+                @Html.DisplayFor(modelItem => item.tokenProvider)
+            </td>  
+            @if(ViewBag.isAdmin)
+            {
+	        <td>
+                @Html.DisplayFor(modelItem => item.Usuario1.nombreUsuario)
+            </td>  
+            }
+	        @if(ViewBag.isAdmin)
+            {
+		    <td>
+				@Html.DisplayFor(modelItem => item.fecha_alta)
+			</td>
+            }
+            @if(ViewBag.isAdmin)
+            {
+		    <td>
+				@Html.DisplayFor(modelItem => item.activo)
+			</td>
+            }
+            <td>
+                <div class="buttons">
+                    <a href="@Url.Action("Details", new { id=item.idUsuario })"><div class="details"></div></a>
+                </div>
+            </td>
+		</tr>
+	}
+		</tbody>
+	</table>
+}
+<div class="paging">
+    <span>@Content.msg_Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) @Content.msg_Pageof @Model.PageCount</span>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField }))
+</div>

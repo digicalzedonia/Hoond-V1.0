@@ -1,0 +1,217 @@
+﻿@model Hoond.Models.Articulo
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Details";
+}
+<div class="icon-details"><h2>@Content.titulo_DetArticulo</h2></div>
+<div class="grid">
+    <div class="grid_row">
+        @if (ViewBag.isAdmin)
+        {
+            <div class="grid_item">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.idArticulo)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.idArticulo)
+                </div>
+            </div>
+        }
+        @if (ViewBag.isAdmin)
+        {
+            <div class="grid_item">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Empresa.nombreEmpresa)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Empresa.nombreEmpresa)
+                </div>
+            </div>
+        }
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Proveedor.nombreProveedor)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Proveedor.nombreProveedor)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.sku)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.sku)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.barcode)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.barcode)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.TipoArticulo.descTipoArticulo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.TipoArticulo.descTipoArticulo)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Marca.nombreMarca)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Marca.nombreMarca)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Coleccion.descColeccion)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Coleccion.descColeccion)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.temporada)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.temporada)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Categoria.descCategoria)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Categoria.descCategoria)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.SubCategoria.descSubCategoria)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.SubCategoria.descSubCategoria)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.claveArticulo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.claveArticulo)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.descArticulo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.descArticulo)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.nombreArticulo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.nombreArticulo)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Color.descColor)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Color.descColor)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Talla.descTalla)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Talla.descTalla)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Presentacion.descPresentacion)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Presentacion.descPresentacion)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.cantidadPresentacion)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.cantidadPresentacion)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.epcPrefijo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.epcPrefijo)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.epcSerie)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.epcSerie)
+            </div>
+        </div>
+        @if (ViewBag.isAdmin)
+        {
+            <div class="grid_item">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+                </div>
+            </div>
+        }
+        @if (ViewBag.isAdmin)
+        {
+            <div class="grid_item">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.fecha_alta)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.fecha_alta)
+                </div>
+            </div>
+        }
+        @if (ViewBag.isAdmin)
+        {
+            <div class="grid_item">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.activo)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.activo)
+                </div>
+            </div>
+        }
+    </div>
+    <div class="grid_row">
+        <div class="grid_item center">
+            <span class="link-txt editr">@Html.ActionLink(Content.link_Editar, "Edit", new { id = Model.idArticulo })</span>
+        </div>
+        <div class="grid_item center">
+            <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+        </div>
+    </div>
+</div>

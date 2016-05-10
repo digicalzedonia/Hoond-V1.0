@@ -1,0 +1,235 @@
+﻿@model Hoond.Models.Articulo
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Create";
+    var Detalle = (List<Hoond.Models.ArticuloCom>)ViewBag.Detalle;
+}
+<div class="icon-create"><h2>@Content.titulo_CreaArticulo</h2></div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+    <div id="tabs">
+        <section id="dta_generales">
+            <h2>@Content.titulo_ArtGenerales</h2>
+            <div class="grid">
+                <div class="grid_row">
+                    @Html.Action("InsertProveedor", "Comun")
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.idProveedor, "Proveedor")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("idProveedor", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'Marca')" })
+                            @Html.ValidationMessageFor(model => model.idProveedor)
+                            <a id='name' href="#" onclick="OpenDialog('Proveedor', 'nombreProveedor')" class="addnew">@Content.link_nuevo</a>
+                        </div>
+                    </div>
+                    @Html.Action("InsertMarca", "Comun")
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.idMarca, "Marca")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("idMarca", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'TipoArticulo,Coleccion')" })
+                            @Html.ValidationMessageFor(model => model.idMarca)
+                            <a id='name' href="#" onclick="OpenDialog('Marca', 'nombreMarca', 'Proveedor')" class="addnew">@Content.link_nuevo</a>
+                        </div>
+                    </div>
+                    @Html.Action("InsertColeccion", "Comun")
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.idColeccion, "Coleccion")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("idColeccion", String.Empty)
+                            @Html.ValidationMessageFor(model => model.idColeccion)
+                            <a id='name' href="#" onclick="OpenDialog('Coleccion', 'descColeccion', 'Marca')" class="addnew">@Content.link_nuevo</a>
+                        </div>
+                    </div>
+                    @Html.Action("InsertTipoArticulo", "Comun")
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.idTipoArticulo, "TipoArticulo")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("idTipoArticulo", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'Categoria,Color,Talla,Presentacion')" })
+                            @Html.ValidationMessageFor(model => model.idTipoArticulo)
+                            <a id='name' href="#" onclick="OpenDialog('TipoArticulo', 'descTipoArticulo', 'Marca')" class="addnew">@Content.link_nuevo</a>
+                        </div>
+                    </div>
+                    @Html.Action("InsertCategoria", "Comun")
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.idCategoria, "Categoria")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("idCategoria", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'SubCategoria')" })
+                            @Html.ValidationMessageFor(model => model.idCategoria)
+                            <a id='name' href="#" onclick="OpenDialog('Categoria', 'descCategoria', 'TipoArticulo')" class="addnew">@Content.link_nuevo</a>
+                        </div>
+                    </div>
+                    @Html.Action("InsertSubCategoria", "Comun")
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.idSubCategoria, "SubCategoria")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("idSubCategoria", String.Empty)
+                            @Html.ValidationMessageFor(model => model.idSubCategoria)
+                            <a id='name' href="#" onclick="OpenDialog('SubCategoria', 'descSubCategoria', 'Categoria')" class="addnew">@Content.link_nuevo</a>
+                        </div>
+                    </div>
+                    @Html.Action("InsertPresentacion", "Comun")
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.idPresentacion, "Presentacion")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("idPresentacion", String.Empty)
+                            @Html.ValidationMessageFor(model => model.idPresentacion)
+                            <a id='name' href="#" onclick="OpenDialog('Presentacion', 'descPresentacion', 'TipoArticulo')" class="addnew">@Content.link_nuevo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="dat_articulo">
+            <h2>@Content.titulo_DatAarticulo</h2>
+            <div class="grid">
+                <div class="grid_row">
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.claveArticulo)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.claveArticulo, new { @class = "uCase"})
+                            @Html.ValidationMessageFor(model => model.claveArticulo)
+                        </div>
+                    </div>
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.descArticulo)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.descArticulo, new { @class = "uCase" })
+                            @Html.ValidationMessageFor(model => model.descArticulo)
+                        </div>
+                    </div>
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.nombreArticulo)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.nombreArticulo, new { @class = "uCase" })
+                            @Html.ValidationMessageFor(model => model.nombreArticulo)
+                        </div>
+                    </div>
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.cantidadPresentacion)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.cantidadPresentacion)
+                            @Html.ValidationMessageFor(model => model.cantidadPresentacion)
+                        </div>
+                    </div>
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.temporada)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.temporada)
+                            @Html.ValidationMessageFor(model => model.temporada)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="dat_detalle">
+            <h2>@Content.titulo_ArtDetalle</h2>
+            <div class="grid">
+                <div class="grid_row">
+                    @Html.Action("InsertColor", "Comun")
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.claveColor, "Color")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("claveColor", String.Empty)
+                            @Html.ValidationMessageFor(model => model.claveColor)
+                            <input type="submit" value="Agregar" />
+                            <a id='name' href="#" onclick="OpenDialogM('Color', 'claveColor2,descColor', 'TipoArticulo')" class="addnew">@Content.link_nuevo</a>
+                        </div>
+                    </div>
+                    @Html.Action("InsertTalla", "Comun")
+                    <div class="grid_item">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.claveTalla, "Talla")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("claveTalla", String.Empty)
+                            @Html.ValidationMessageFor(model => model.claveTalla)
+                            <input type="submit" value="Agregar" />
+                            <a id='name' href="#" onclick="OpenDialogM('Talla', 'claveTalla2,descTalla', 'TipoArticulo')" class="addnew">@Content.link_nuevo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+@using (Html.BeginForm("Guardar", "Articulo", FormMethod.Post))
+{
+    if (!String.IsNullOrEmpty(ViewBag.msgError))
+    {
+        @Html.Action("Mensaje", "Comun", new { msgError = ViewBag.msgError })
+    }
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => Model.Color)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.Talla)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.barcode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model.sku)
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Detalle)
+            {
+                <tr>
+                    <td>
+                        @item.color
+                    </td>
+                    <td>
+                        @item.talla
+                    </td>
+                    <td>
+                        <input type="text" name="codes" value="@item.barcode" class="uCase" maxlength="20" onkeypress="return isNumber(event)" />
+                    </td>
+                    <td>
+                        <input type="text" name="skus" value="@item.sku" maxlength="50" class="uCase" />
+                    </td>
+                    <td>
+                        <div class="buttons">
+                            <a href="@Url.Action("Create", new {codigo = item.id })"><div class="delete"></div></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <input type="submit" value="@Content.submit_Guardar" />
+}

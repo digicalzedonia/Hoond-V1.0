@@ -1,0 +1,122 @@
+.menu nav{
+  height:100%;
+  overflow-y:auto; 
+  direction:rtl;
+  padding-top: 20px;
+}
+
+
+.menu nav ul li a{
+  font-size: .85em;  
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.menu nav::-webkit-scrollbar {
+    width: .3em;
+}
+ 
+.menu nav::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.6);
+}
+ 
+.menu nav::-webkit-scrollbar-thumb:vertical {
+max-height: 1px;
+}
+
+.accordion,
+.accordion ul,
+.accordion li,
+.accordion a,
+.accordion span {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+.accordion li {
+	list-style: none;
+	text-transform: uppercase;
+}
+
+.accordion li a{
+	padding:1.5em 1.8em;
+	padding-left: 3.7em;
+}
+
+.sub-menu li a{
+	text-decoration: none;
+	text-transform: capitalize;
+	padding:1em;
+	padding-left: 3em;
+}
+
+.submenu2 li:hover a 
+.sub-menu li:hover a { 
+	
+ }
+
+
+.accordion li > a {
+	display: block;
+	position: relative;
+
+}
+
+
+.submenu2 li {
+	padding: 0 0 0 1em;
+}
+
+.accordion li > .sub-menu {
+	display: none;
+}
+
+
+.accordion li > .sub-menu > li > .submenu2{
+	display: none;
+}
+
+
+.accordion li:target > .sub-menu {
+	display: block;
+}
+
+.accordion > .sub-menu li:target > .submenu2 {
+	display: block;
+}
+
+
+/* iconos */
+
+.accordion > li > a:before {
+	position: absolute;
+	top: .9em;
+	left: .6em;
+	content: '';
+	width: 30px;
+	height: 30px;
+	margin-left: .2em;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+
+.accordion li.i1 > a:before { background-position: 0px 0px; }
+/*.accordion li.i1:hover > a:before,
+.accordion li.i1:target > a:before,
+.accordion li.i1 > a.active:before { background-position: 0px -24px; }*/
+
+.accordion li.i2 > a:before { background-position: -30px 0px; }
+
+
+.accordion li.i3 > a:before { background-position: -60px 0px; }
+
+
+.accordion li.i4 > a:before { background-position: -90px 0px; }
+
+.accordion li.i5 > a:before { background-position: -120px 0px; }
+
+.accordion li.i6 > a:before { background-position: -150px 0px; }

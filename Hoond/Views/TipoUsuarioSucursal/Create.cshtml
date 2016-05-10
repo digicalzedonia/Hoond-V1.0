@@ -1,0 +1,34 @@
+﻿@model Hoond.Models.TipoUsuarioSucursal
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Create";
+}
+<div class="icon-create"><h2>@Content.titulo_Crear TipoUsuarioSucursal</h2></div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="grid">
+        <div class="grid_row">
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.descTipoUsuarioSucursal)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.descTipoUsuarioSucursal)
+                @Html.ValidationMessageFor(model => model.descTipoUsuarioSucursal)
+            </div>
+        </div>
+        </div>
+        <div class="grid_row">
+            <div class="grid_item center">
+                <input type="submit" value="@Content.submit_Crear" />
+            </div>
+            <div class="grid_item center">
+                <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+            </div>
+        </div>
+    </diV>
+}
+
+

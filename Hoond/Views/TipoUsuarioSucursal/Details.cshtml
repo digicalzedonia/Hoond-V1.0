@@ -1,0 +1,66 @@
+﻿@model Hoond.Models.TipoUsuarioSucursal
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Details";
+}
+<div class="icon-details"><h2>@Content.titulo_Detalle TipoUsuarioSucursal</h2></div>
+<div class="grid">
+    <div class="grid_row">
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.idTipoUsuarioSucursal)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.idTipoUsuarioSucursal)
+            </div>
+        </div>
+        }
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.descTipoUsuarioSucursal)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.descTipoUsuarioSucursal)
+            </div>
+        </div>  
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.fecha_alta)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.activo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        <div class="grid_item center">
+            <span class="link-txt editr">@Html.ActionLink(Content.linkEditar, "Edit", new { id=Model.idTipoUsuarioSucursal })</span>
+        </div>
+        <div class="grid_item center">
+            <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+        </div>
+    </div>
+</div>

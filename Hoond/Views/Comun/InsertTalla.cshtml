@@ -1,0 +1,18 @@
+﻿@using Hoond.app_GlobalResources;
+@model Hoond.Models.Talla
+<div id="DialogTalla" title="@Content.titulo_CreaTalla" style="display:none">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.claveTalla)
+    </div>
+    <div class="editor-field">
+        @Html.TextBox("claveTalla2", null, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.claveTalla)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descTalla)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.descTalla, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.descTalla)
+    </div>
+</div>

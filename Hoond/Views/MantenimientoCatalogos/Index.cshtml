@@ -1,0 +1,114 @@
+﻿@using Hoond.app_GlobalResources;
+@model System.Data.DataTable
+@using System.Data;
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Content.Titulo_MantenimientoCatalogo</h2>
+
+@using (Html.BeginForm("Index", "MantenimientoCatalogos", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+   
+    
+    @Html.Raw(ViewBag.error)
+    
+    if (Model == null)
+    {
+        //se oculta cuando no trae nada.
+        if (ViewBag.listahojas == null)
+        { 
+              <div>@Content.msg_SeleccioneExtension</div>
+          @Html.DropDownList("TipoCatDescarga")
+          <input type="submit" name="cmdsubmit" value="@Content.submitDescargaCatalogo" /><br />
+        }
+   
+    
+   
+
+    if (ViewBag.listahojas == null)
+       { 
+         <div>@Content.msg_Estension </div>
+          @Html.DropDownList("TipoArchivo")
+    <input type="file" id="files" name="files" accept=".xls, .xlsx, .txt" required data-val="true" data-val-required="@Content.msg_SeleccionExtencionArchivo" />
+       }
+
+
+    if (ViewBag.listahojas != null)
+    {
+         <div>@Content.DN_Catalogo </div>
+         @Html.DropDownList("TipoCatalogo")   
+    
+        <h2>@Content.Titulo_SeleccionaHojas</h2>
+        @Html.DropDownList("listahojas")
+      }
+    <input type="hidden" value="@Html.Raw(ViewBag.pathProcesa)" id="ruta" name="ruta" />
+    <input type="submit" name="cmdsubmitBA" value="@Content.submitbuscarArchivo" /> <br />
+    }
+  
+}
+
+    @if (Model != null)
+    {
+         using (Html.BeginForm("ValidaInfo", "MantenimientoCatalogos", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+         { 
+         @Html.AntiForgeryToken()
+          <p> @string.Format(Content.msjCatalogo, @ViewBag.catalgoSeleecionado)</p>  
+          <p> @string.Format(Content.msjNuevos, @ViewBag.Nuevosdt) </p>  
+          <p>  @string.Format(Content.msjActualizaciones, @ViewBag.Actdt) </p>  
+          <p> @string.Format(Content.msjErrores, @ViewBag.erroresdt)</p>  
+             if (ViewBag.errorVal == "0")
+             { 
+                  <input type="submit" id="cmdActualiza"  name="cmdActualiza" value="@Content.submitActualizarCatalogo" />
+             }
+
+            <input type="hidden" value="@Html.Raw(ViewBag.Catalogo)" id="Catalogo" name="Catalogo" />
+
+        <div>
+        <span class="link-txt back">@Html.ActionLink(Resources.Content.linkRegresar, "Index")</span>
+       </div>
+        
+      <h2>@Content.msg_InfoTabla</h2>    
+    <table  >
+        <thead>
+            <tr>
+                @foreach (DataColumn col in Model.Columns)
+                {
+
+                    if (col.ColumnName != "ide")
+                    {
+                    <th>@col.ColumnName</th>}
+
+                }
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (DataRow row in Model.Rows)
+            {
+                <tr>
+                    @foreach (DataColumn col in Model.Columns)
+                    {
+                        if (col.ColumnName != "ide")
+                        { <td>@row[col.ColumnName]</td> }
+                       
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+   
+         }
+    }
+    
+@if (ViewBag.Nuevosdt != null)
+{ 
+     <input type="hidden" id="txtPregunta" name="txtPregunta" value="@String.Format(Resources.Content.PreguntaActualizacion, ViewBag.Actdt, ViewBag.Nuevosdt)" />
+
+}
+

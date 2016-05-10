@@ -1,0 +1,72 @@
+﻿@model Hoond.Models.UsuarioSucursal
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Details";
+}
+<div class="icon-details"><h2>@Content.titulo_Detalle UsuarioSucursal</h2></div>
+<div class="grid">
+    <div class="grid_row">
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Sucursal.nombreSucursal)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Sucursal.nombreSucursal)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Usuario1.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Usuario1.nombreUsuario)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.TipoUsuarioSucursal.descTipoUsuarioSucursal)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.TipoUsuarioSucursal.descTipoUsuarioSucursal)
+            </div>
+        </div>  
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.fecha_alta)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.activo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        <div class="grid_item center">
+            <span class="link-txt editr">@Html.ActionLink(Content.linkEditar, "Edit", new { id = Model.idSucursal, idUsuario = Model.idUsuario })</span>
+        </div>
+        <div class="grid_item center">
+            <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+        </div>
+    </div>
+</div>

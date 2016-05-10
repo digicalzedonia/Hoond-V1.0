@@ -1,0 +1,130 @@
+﻿@model Hoond.Models.Factura
+@using Hoond.app_GlobalResources;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="icon-delete"><h2>@Content.titulo_EliminarFactura</h2></div>
+
+
+<h3>@Content.VistaEliminar</h3>
+
+    <div class="grid">
+        <div class="grid_row md">
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.idFactura)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.idFactura)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.archivoPDF)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.archivoPDF)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.archivoXML)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.archivoXML)
+                </div>
+            </div>
+        </div>
+        <div class="grid_row md">
+          
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.serie)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.serie)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.foio)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.foio)
+                </div>
+            </div>
+        </div>
+        <div class="grid_row md">
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.fechaFactura)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.fechaFactura)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.moneda)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.moneda)
+                </div>
+            </div>
+            
+        </div>
+        <div class="grid_row md">
+           
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.total)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.total)
+                </div>
+            </div>
+        </div>
+        <div class="grid_row md">
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.emisorRfc)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.emisorRfc)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.emisorNombre)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.emisorNombre)
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="grid_row md">
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.activo)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.activo)
+                </div>
+            </div>
+        </div>
+    </div>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <div class="center"><input type="submit" value="@Content.submit_Eliminar" /></div>
+        <div class="grid_item center">
+            <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+        </div>
+    </p>
+}

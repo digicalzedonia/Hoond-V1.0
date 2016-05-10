@@ -1,0 +1,74 @@
+﻿@model Hoond.Models.Ruta
+@using Hoond.app_GlobalResources;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="icon-delete"><h2>@Content.titulo_EliminarRuta</h2></div>
+
+
+<h3>¿Está seguro que desea eliminar este registro?</h3>
+
+    <div class="grid">
+        <div class="grid_row md">
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.idRuta)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.idRuta)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.descRuta)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.descRuta)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.direccion)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.direccion)
+                </div>
+            </div>
+        </div>
+        <div class="grid_row md">
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.fecha_alta)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.fecha_alta)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.activo)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.activo)
+                </div>
+            </div>
+        </div>
+    </div>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <div class="center"><input type="submit" value="Eliminar Registro" /></div>
+        <span class="link-txt back">@Html.ActionLink("Regresar", "Index")</span>
+    </p>
+}

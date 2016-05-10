@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @{string tema = "~/Content/css/Theme1.css";}
+    <title>Logistica Calzedonia</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    @Styles.Render("~/Content/cssAll")
+    @Styles.Render(@tema)
+    @Scripts.Render("~/Scripts/jquery-1.8.2.min.js")
+    @Scripts.Render("~/Scripts/jquery-ui-1.8.24.min.js")
+    @*@Styles.Render("~/Content/themes/base/jquery-ui.css")*@
+    @Scripts.Render("~/Scripts/Comun.js")
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+    <body>
+        <div class="se-pre-con"></div>
+        <div class="menu" id="menu">
+            <nav>
+                @Html.Action("_MenuLateral","MenuItems")
+            </nav>
+        </div>
+        <div id="menu-btn">
+            <div class="c-hamburger c-hamburger--htx">
+                <span>toggle menu</span>
+            </div>
+        </div>
+        <div class="wrap">
+            <header>
+                @Html.Partial("partials/_Header")
+            </header>
+            <section class="content">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            @Html.Partial("partials/_Footer")
+        </footer>
+        @Scripts.Render("~/Content/js/menu.js")
+        @Scripts.Render("~/Content/js/table.js")
+        @Scripts.Render("~/Content/js/footable.js?v=2-0-1")
+        @Scripts.Render("~/Content/js/footable.striping.js")
+    </body>
+</html>

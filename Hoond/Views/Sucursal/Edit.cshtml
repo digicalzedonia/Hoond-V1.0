@@ -1,0 +1,180 @@
+﻿@model Hoond.Models.Sucursal
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="icon-edit"><h2>@Content.titulo_Editar Sucursal</h2></div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<div class="grid">
+    <div class="grid_row">
+        @if(!ViewBag.isAdmin)
+        {
+            @Html.HiddenFor(model => model.idSucursal)  
+        }
+        else
+        {
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idSucursal)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.idSucursal)
+                @Html.ValidationMessageFor(model => model.idSucursal)
+            </div>
+        </div>
+        }
+        @Html.HiddenFor(model => model.idEmpresa)   
+        @Html.Action("InsertTipoSucursal","Comun")
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idTipoSucursal, "TipoSucursal")
+            </div>
+            <div class="editor-field">
+                @*En caso de desencadenamineto cabiar esta linea indicando las entidadea a desencadenar separadas por coma *@
+                @*@Html.DropDownList("idTipoSucursal", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'Entidad1,Entidad2')" })*@
+                @Html.DropDownList("idTipoSucursal", String.Empty)
+                @Html.ValidationMessageFor(model => model.idTipoSucursal)
+                @*Indicar el campo que va a retonar ala hacer la captura del formulario modal *@
+                <a id='name' href="#" onclick="OpenDialog('TipoSucursal', 'Campo(s) a retornar')" class="addnew">@Content.link_nuevo</a>
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.nombreSucursal)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.nombreSucursal)
+                @Html.ValidationMessageFor(model => model.nombreSucursal)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.telefonoSucursal)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.telefonoSucursal)
+                @Html.ValidationMessageFor(model => model.telefonoSucursal)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dirSucursalPais)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dirSucursalPais)
+                @Html.ValidationMessageFor(model => model.dirSucursalPais)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dirSucursalEstado)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dirSucursalEstado)
+                @Html.ValidationMessageFor(model => model.dirSucursalEstado)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dirSucursalMunicipio)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dirSucursalMunicipio)
+                @Html.ValidationMessageFor(model => model.dirSucursalMunicipio)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dirSucursalCP)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dirSucursalCP)
+                @Html.ValidationMessageFor(model => model.dirSucursalCP)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dirSucursalColonia)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dirSucursalColonia)
+                @Html.ValidationMessageFor(model => model.dirSucursalColonia)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dirSucursalCalle)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dirSucursalCalle)
+                @Html.ValidationMessageFor(model => model.dirSucursalCalle)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dirSucursalNoExterior)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dirSucursalNoExterior)
+                @Html.ValidationMessageFor(model => model.dirSucursalNoExterior)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.dirSucursalNoInterior)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.dirSucursalNoInterior)
+                @Html.ValidationMessageFor(model => model.dirSucursalNoInterior)
+            </div>
+        </div>
+        @Html.HiddenFor(model => model.idUsuario_alta)   
+        @if(!ViewBag.isAdmin)
+        {
+            @Html.HiddenFor(model => model.fecha_alta)  
+        }
+        else
+        {
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.fecha_alta)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.fecha_alta)
+                @Html.ValidationMessageFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(!ViewBag.isAdmin)
+        {
+            @Html.HiddenFor(model => model.activo)  
+        }
+        else
+        {
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.activo)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.activo)
+                @Html.ValidationMessageFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        <div class="grid_item center">
+            <input type="submit" value="@Content.submit_Guardar" />
+        </div>
+        <div class="grid_item center">
+            <p class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</p>
+        </div>
+    </div>
+</div>
+}
+
+
+

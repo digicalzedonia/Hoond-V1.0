@@ -1,0 +1,74 @@
+﻿@model Hoond.Models.UsuarioRol
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Details";
+}
+<div class="icon-details"><h2>@Content.titulo_DetUsuarioRol</h2></div>
+<div class="grid">
+    <div class="grid_row">
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Usuario1.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Usuario1.nombreUsuario)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Rol.descRol)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Rol.descRol)
+            </div>
+        </div>  
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Empresa.nombreEmpresa)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Empresa.nombreEmpresa)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.fecha_alta)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.activo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        <div class="grid_item center">
+            <span class="link-txt editr">@Html.ActionLink(Content.link_Editar, "Edit", new { id=Model.idUsuarioRol })</span>
+        </div>
+        <div class="grid_item center">
+            <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+        </div>
+    </div>
+</div>

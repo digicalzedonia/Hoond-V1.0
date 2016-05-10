@@ -1,0 +1,45 @@
+﻿@model Hoond.Models.Marca
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Create";
+}
+<div class="icon-create"><h2>@Content.titulo_CreaMarca</h2></div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="grid">
+        <div class="grid_row">
+        @Html.Action("InsertProveedor","Comun")
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idProveedor, "Proveedor")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idProveedor", String.Empty)
+                @Html.ValidationMessageFor(model => model.idProveedor)
+                <a id='name' href="#" onclick="OpenDialog('Proveedor', 'nombreProveedor')" class="addnew">@Content.link_nuevo</a>
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.nombreMarca)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.nombreMarca)
+                @Html.ValidationMessageFor(model => model.nombreMarca)
+            </div>
+        </div>
+        </div>
+        <div class="grid_row">
+            <div class="grid_item center">
+                <input type="submit" value="@Content.submit_Crear" />
+            </div>
+            <div class="grid_item center">
+                <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+            </div>
+        </div>
+    </diV>
+}
+
+

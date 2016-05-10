@@ -1,0 +1,111 @@
+﻿@model Hoond.Models.Usuario
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="icon-delete"><h2>@Content.titulo_DelUsuario</h2></div>
+<h3>@Content.msg_EliminarRegistro</h3>
+<div class="grid">
+    <div class="grid_row">
+        @if(!ViewBag.isAdmin){
+            @Html.HiddenFor(model => model.idUsuario)
+        }else{
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.idUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.idUsuario)
+            </div>
+        </div>
+        }
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.TipoLogin1.descTipoLogin)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.TipoLogin1.descTipoLogin)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.nombreUsuario)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.username)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.username)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.password)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.password)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.email)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.email)
+            </div>
+        </div>  
+        @if(!ViewBag.isAdmin){
+            @Html.HiddenFor(model => model.Usuario2.nombreUsuario)
+        }else{
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Usuario2.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Usuario2.nombreUsuario)
+            </div>
+        </div>
+        }
+        @if(!ViewBag.isAdmin){
+            @Html.HiddenFor(model => model.fecha_alta)
+        }else{
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.fecha_alta)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(!ViewBag.isAdmin){
+            @Html.HiddenFor(model => model.activo)
+        }else{
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.activo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        @using (Html.BeginForm()) 
+        {
+            @Html.AntiForgeryToken()
+            <div class="grid_item center">
+                <div class="center"><input type="submit" value="@Content.submit_Eliminar" /></div>
+            </div>
+            <div class="grid_item center">
+                <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+            </div>
+        }
+    </div>
+</div>

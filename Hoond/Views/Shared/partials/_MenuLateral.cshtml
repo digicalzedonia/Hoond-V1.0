@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Hoond.Models.Menu>
+@using Hoond.app_GlobalResources;
+@using System.Resources;
+@{
+    ResourceManager rm = new ResourceManager(typeof(Hoond.app_GlobalResources.Content));
+}
+<ul class="accordion">
+    @foreach (var menu in Model.Where(m => m.idMenu_padre.Equals(null)))
+    {
+    <li class="@menu.Icono.claseIcono">
+        <a href="#">@rm.GetString(menu.etiqueta)</a>
+            <ul class="sub-menu">
+            <li>
+            @foreach(var subMenu in Model.Where(m => m.idMenu_padre == menu.idMenu))
+            {
+                if(subMenu.Vista.action == "#")
+                {
+                    <a href="#">@rm.GetString(subMenu.etiqueta)</a>
+                }
+                else 
+                { 
+                    @Html.ActionLink(rm.GetString(subMenu.etiqueta), subMenu.Vista.action, subMenu.Vista.controller)
+                }
+                <ul class="submenu2">
+                @foreach (var item in Model.Where(m => m.idMenu_padre == subMenu.idMenu))
+                {
+                    <li>
+                        @Html.ActionLink(rm.GetString(item.etiqueta), item.Vista.action, item.Vista.controller)
+                    </li>
+                }
+                </ul>
+            }
+            </li>
+        </ul>
+    </li> 
+    }
+</ul>

@@ -1,0 +1,1467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="submit_Crear" xml:space="preserve">
+    <value>Crear nuevo</value>
+  </data>
+  <data name="errorPath" xml:space="preserve">
+    <value>Este campo es requerido</value>
+  </data>
+  <data name="path" xml:space="preserve">
+    <value>Ruta</value>
+  </data>
+  <data name="TituloConfiguracion" xml:space="preserve">
+    <value>Configuracion de Usuario</value>
+  </data>
+  <data name="TituloIdioma" xml:space="preserve">
+    <value>Seleccione un idioma</value>
+  </data>
+  <data name="msg_Eliminacion" xml:space="preserve">
+    <value>¿Está seguro que desea eliminar este registro?</value>
+  </data>
+  <data name="link_Crear" xml:space="preserve">
+    <value>Crear Nuevo</value>
+  </data>
+  <data name="link_Editar" xml:space="preserve">
+    <value>Editar Registro</value>
+  </data>
+  <data name="link_Regresar" xml:space="preserve">
+    <value>Regresar a la Lista</value>
+  </data>
+  <data name="submit_Eliminar" xml:space="preserve">
+    <value>Eliminar Registro</value>
+  </data>
+  <data name="submit_Guardar" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="tituloCrearPath" xml:space="preserve">
+    <value>Crear Nueva Ruta</value>
+  </data>
+  <data name="tituloDetallePath" xml:space="preserve">
+    <value>Detalle de Ruta</value>
+  </data>
+  <data name="tituloEditarPath" xml:space="preserve">
+    <value>Editar Ruta</value>
+  </data>
+  <data name="tituloEliminarPath" xml:space="preserve">
+    <value>Eliminar Ruta</value>
+  </data>
+  <data name="tituloIndicePath" xml:space="preserve">
+    <value>Listado de Rutas</value>
+  </data>
+  <data name="menuAdminiVistas" xml:space="preserve">
+    <value>Administración de Vistas</value>
+  </data>
+  <data name="menuAdminMenus" xml:space="preserve">
+    <value>Administración de Menus</value>
+  </data>
+  <data name="menuCatalogos" xml:space="preserve">
+    <value>Catálogos</value>
+  </data>
+  <data name="menuConfigSistema" xml:space="preserve">
+    <value>Configuración de Sistema</value>
+  </data>
+  <data name="menuListaVistas" xml:space="preserve">
+    <value>Vistas</value>
+  </data>
+  <data name="menuCrearVista" xml:space="preserve">
+    <value>Nueva Vista</value>
+  </data>
+  <data name="ErrorValorRequerido" xml:space="preserve">
+    <value>requerido</value>
+  </data>
+  <data name="msg_EliminarMasivo" xml:space="preserve">
+    <value>¿Esta seguro de eliminar los siguientes registros?</value>
+  </data>
+  <data name="msg_ElimarM" xml:space="preserve">
+    <value>Esta seguro de eliminar {0} registros?</value>
+  </data>
+  <data name="submit_EliminarM" xml:space="preserve">
+    <value>Eliminar Seleccionados</value>
+  </data>
+  <data name="submit_Busqueda" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="msg_BusquedaCamp" xml:space="preserve">
+    <value>Busqueda por:</value>
+  </data>
+  <data name="msg_BusquedaVal" xml:space="preserve">
+    <value>Valor:</value>
+  </data>
+  <data name="msg_Listar" xml:space="preserve">
+    <value>Listar:</value>
+  </data>
+  <data name="msg_Page" xml:space="preserve">
+    <value>Pagina</value>
+  </data>
+  <data name="msg_Pageof" xml:space="preserve">
+    <value>de</value>
+  </data>
+  <data name="titulo_Crear" xml:space="preserve">
+    <value>Crear nuevo</value>
+  </data>
+  <data name="titulo_Editar" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="titulo_Eliminar" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="titulo_Listado" xml:space="preserve">
+    <value>Listado de</value>
+  </data>
+  <data name="titulo_EliminarM" xml:space="preserve">
+    <value>Eliminación masiva de </value>
+  </data>
+  <data name="submit_EliminarC" xml:space="preserve">
+    <value>Eliminar Registros</value>
+  </data>
+  <data name="titulo_Detalle" xml:space="preserve">
+    <value>Detalle de</value>
+  </data>
+  <data name="msg_ValidaCap" xml:space="preserve">
+    <value>Error: El valor no es correcto.</value>
+  </data>
+  <data name="msg_CapMsg" xml:space="preserve">
+    <value>El valor es requerido</value>
+  </data>
+  <data name="msg_CapRefresh" xml:space="preserve">
+    <value>Actulizar</value>
+  </data>
+  <data name="errorColumnasErroneas" xml:space="preserve">
+    <value>Las columnas son erroneas, por favor verifique</value>
+  </data>
+  <data name="errorRutaNoExistente" xml:space="preserve">
+    <value>Ruta No existente</value>
+  </data>
+  <data name="errorSeleccionArchivo" xml:space="preserve">
+    <value>Seleccione el archivo</value>
+  </data>
+  <data name="errorSeleccionHoja" xml:space="preserve">
+    <value>Seleccione la hoja</value>
+  </data>
+  <data name="errorSeleccionTipoArchivo" xml:space="preserve">
+    <value>Seleccione el tipo de Archivo</value>
+  </data>
+  <data name="errorSeleccionTipoCatalogo" xml:space="preserve">
+    <value>Seleccione el tipo de Por favor Seleccione el Tipo de Catalogo</value>
+  </data>
+  <data name="msgAlta" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="msgErrorCaptcha" xml:space="preserve">
+    <value>Error: captcha no es valido.</value>
+  </data>
+  <data name="msgErrorRelacion" xml:space="preserve">
+    <value>La relacion entre {0} y {1} es incorrecta</value>
+  </data>
+  <data name="msgErrorValorDuplicado" xml:space="preserve">
+    <value>El valor esta duplicado</value>
+  </data>
+  <data name="msgIDNoExiste" xml:space="preserve">
+    <value>El {0} no Existe</value>
+  </data>
+  <data name="msgIDNulo" xml:space="preserve">
+    <value>El {0} es nulo</value>
+  </data>
+  <data name="msgModificacion" xml:space="preserve">
+    <value>Modificacion</value>
+  </data>
+  <data name="msgProveedorNulo" xml:space="preserve">
+    <value>El nombre del proveedor es nulo</value>
+  </data>
+  <data name="msg_DescargaCatalogosnuevo" xml:space="preserve">
+    <value>Desea descargar nuevamente los archivos?</value>
+  </data>
+  <data name="msg_Estension" xml:space="preserve">
+    <value>Estension</value>
+  </data>
+  <data name="msg_InfoTabla" xml:space="preserve">
+    <value>Informacion de Tabla</value>
+  </data>
+  <data name="msg_PregDescargaCatalogos" xml:space="preserve">
+    <value>Realmente desea actualizar los datos del Catalogo Seleccionado?</value>
+  </data>
+  <data name="msg_ProcesoTerminado" xml:space="preserve">
+    <value>Proceso Terminado puede usted continuar.</value>
+  </data>
+  <data name="msg_SeleccioneExtension" xml:space="preserve">
+    <value>Seleccione la Extension:</value>
+  </data>
+  <data name="msg_SeleccionExtencionArchivo" xml:space="preserve">
+    <value>Seleccione Archivo(Excel o txt)</value>
+  </data>
+  <data name="msjActualizaciones" xml:space="preserve">
+    <value>Actualizaciones: {0}</value>
+  </data>
+  <data name="msjCatalogo" xml:space="preserve">
+    <value>Catalogo: {0}</value>
+  </data>
+  <data name="msjErrores" xml:space="preserve">
+    <value>Errores: {0}</value>
+  </data>
+  <data name="msjNuevos" xml:space="preserve">
+    <value>Nuevos: {0}</value>
+  </data>
+  <data name="MSJ_CapthaLetras" xml:space="preserve">
+    <value>Escribe las letras</value>
+  </data>
+  <data name="MSJ_CapthaRefresh" xml:space="preserve">
+    <value>Cambiar</value>
+  </data>
+  <data name="PreguntaActualizacion" xml:space="preserve">
+    <value>¿Esta Seguro de querer Actualizar {0}?</value>
+  </data>
+  <data name="submitActualizarCatalogo" xml:space="preserve">
+    <value>Actualiza Catalogo</value>
+  </data>
+  <data name="submitbuscarArchivo" xml:space="preserve">
+    <value>Buscar Archivo</value>
+  </data>
+  <data name="submitDescargaCatalogo" xml:space="preserve">
+    <value>Descarga Catalogo</value>
+  </data>
+  <data name="Titulo_AltaMasivaArticulo" xml:space="preserve">
+    <value>Alta Masiva de Articulos</value>
+  </data>
+  <data name="Titulo_MantenimientoCatalogo" xml:space="preserve">
+    <value>Mantenimiento Catalogo</value>
+  </data>
+  <data name="Titulo_SeleccionaHojas" xml:space="preserve">
+    <value>Selecciona la Hoja a Procesar</value>
+  </data>
+  <data name="link_nuevo" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="submit_Aplicar" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="titulo_Cpassword" xml:space="preserve">
+    <value>Cambio de Contrseña</value>
+  </data>
+  <data name="msg_error" xml:space="preserve">
+    <value>Error: </value>
+  </data>
+  <data name="link_CargaM" xml:space="preserve">
+    <value>Cargar Archivo</value>
+  </data>
+  <data name="menu_AltaEmpresa" xml:space="preserve">
+    <value>alta de empresa</value>
+  </data>
+  <data name="menu_Empresas" xml:space="preserve">
+    <value>Empresas</value>
+  </data>
+  <data name="menu_VerEmpresas" xml:space="preserve">
+    <value>ver empresas</value>
+  </data>
+  <data name="menu_AlmUbicacion" xml:space="preserve">
+    <value>almacen ubicacion</value>
+  </data>
+  <data name="menu_AltaAlmUbi" xml:space="preserve">
+    <value>alta almacen ubicación</value>
+  </data>
+  <data name="menu_AltaArticulo" xml:space="preserve">
+    <value>alta de articulo</value>
+  </data>
+  <data name="menu_AltaIcono" xml:space="preserve">
+    <value>alta de icono</value>
+  </data>
+  <data name="menu_AltaMArticulo" xml:space="preserve">
+    <value>alta masiva de articulos</value>
+  </data>
+  <data name="menu_AltaMenu" xml:space="preserve">
+    <value>alta de menu</value>
+  </data>
+  <data name="menu_AltaRol" xml:space="preserve">
+    <value>alta de rol</value>
+  </data>
+  <data name="menu_AltaRolMenu" xml:space="preserve">
+    <value>alta de rol menu</value>
+  </data>
+  <data name="menu_AltaSucursal" xml:space="preserve">
+    <value>alta de sucursal</value>
+  </data>
+  <data name="menu_AltaUsuario" xml:space="preserve">
+    <value>alta de usuario</value>
+  </data>
+  <data name="menu_AltaUsuarioRol" xml:space="preserve">
+    <value>alta de usario rol</value>
+  </data>
+  <data name="menu_AltaVista" xml:space="preserve">
+    <value>alta de vista</value>
+  </data>
+  <data name="menu_Articulo" xml:space="preserve">
+    <value>articulos</value>
+  </data>
+  <data name="menu_Iconos" xml:space="preserve">
+    <value>iconos</value>
+  </data>
+  <data name="menu_LogModificacion" xml:space="preserve">
+    <value>log de modificaciones</value>
+  </data>
+  <data name="menu_Menu" xml:space="preserve">
+    <value>menus</value>
+  </data>
+  <data name="menu_MtoCatalogos" xml:space="preserve">
+    <value>Mantenimiento</value>
+  </data>
+  <data name="menu_Roles" xml:space="preserve">
+    <value>roles</value>
+  </data>
+  <data name="menu_RolMenus" xml:space="preserve">
+    <value>rol menu</value>
+  </data>
+  <data name="menu_Sucursales" xml:space="preserve">
+    <value>sucursales</value>
+  </data>
+  <data name="menu_Transaccion" xml:space="preserve">
+    <value>transacción</value>
+  </data>
+  <data name="menu_UsuarioRol" xml:space="preserve">
+    <value>usuario rol</value>
+  </data>
+  <data name="menu_Usuarios" xml:space="preserve">
+    <value>usuarios</value>
+  </data>
+  <data name="menu_UsuPro" xml:space="preserve">
+    <value>usuario provider</value>
+  </data>
+  <data name="menu_VerAlmUbi" xml:space="preserve">
+    <value>ver almacen ubicación</value>
+  </data>
+  <data name="menu_VerAlmUbicacion" xml:space="preserve">
+    <value>ver almacen ubicación</value>
+  </data>
+  <data name="menu_VerArticulos" xml:space="preserve">
+    <value>ver articulos</value>
+  </data>
+  <data name="menu_VerIconos" xml:space="preserve">
+    <value>ver iconos</value>
+  </data>
+  <data name="menu_VerMenus" xml:space="preserve">
+    <value>ver menus</value>
+  </data>
+  <data name="menu_VerRoles" xml:space="preserve">
+    <value>ver roles</value>
+  </data>
+  <data name="menu_VerRolMenu" xml:space="preserve">
+    <value>ver rol menu</value>
+  </data>
+  <data name="menu_VerSucursales" xml:space="preserve">
+    <value>ver sucursales</value>
+  </data>
+  <data name="menu_VerUsuarioRol" xml:space="preserve">
+    <value>ver usuario rol</value>
+  </data>
+  <data name="menu_VerUsuarios" xml:space="preserve">
+    <value>ver usuarios</value>
+  </data>
+  <data name="menu_VerVistas" xml:space="preserve">
+    <value>ver vistas</value>
+  </data>
+  <data name="menu_Vistas" xml:space="preserve">
+    <value>vistas</value>
+  </data>
+  <data name="msg_AccesoDenegado" xml:space="preserve">
+    <value>Acceso Denegado</value>
+  </data>
+  <data name="msg_SinPrivilegio" xml:space="preserve">
+    <value>No tiene permisos para ejecutar la acción seleccionada</value>
+  </data>
+  <data name="msg_ValCapcha" xml:space="preserve">
+    <value>Error: Dato no valido</value>
+  </data>
+  <data name="msg_CampoReq" xml:space="preserve">
+    <value>El campo {0} es obligatorio</value>
+  </data>
+  <data name="msg_ConfigCon" xml:space="preserve">
+    <value>La confirmación de contrseña es incorrecta.</value>
+  </data>
+  <data name="msg_CorreoExist" xml:space="preserve">
+    <value>Nombre de usuario o correo electronico ya existen.</value>
+  </data>
+  <data name="msg_ExternalCon" xml:space="preserve">
+    <value>Usted ha autenticado con éxito con {0} Por favor, introduzca un nombre de usuario de este sitio de abajo y haga clic en el botón Confirmar para terminar de inicio de sesión.</value>
+  </data>
+  <data name="msg_ExternalLogin" xml:space="preserve">
+    <value>Entrar usando otro servicio</value>
+  </data>
+  <data name="msg_FalloExt" xml:space="preserve">
+    <value>Inicio de sesión sin éxito con el servicio .</value>
+  </data>
+  <data name="msg_SessionIni" xml:space="preserve">
+    <value>Ya tiene iniciada una session en otro equipo:</value>
+  </data>
+  <data name="msg_UsuarioInc" xml:space="preserve">
+    <value>Nombre de usuario o contraseña incorrecto.</value>
+  </data>
+  <data name="submit_Registrar" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
+  <data name="titulo_External" xml:space="preserve">
+    <value>Utilizar otro servicio para conectarse</value>
+  </data>
+  <data name="titulo_ExternalCon" xml:space="preserve">
+    <value>Asociar su cuenta {0}</value>
+  </data>
+  <data name="titulo_ExternalIndex" xml:space="preserve">
+    <value>Insicio de Seción</value>
+  </data>
+  <data name="titulo_ExternalLogin" xml:space="preserve">
+    <value>No hay servicios de autenticación externos</value>
+  </data>
+  <data name="titulo_CreaArticulo" xml:space="preserve">
+    <value>Alta de articulo</value>
+  </data>
+  <data name="titulo_ArtDetalle" xml:space="preserve">
+    <value>Detalle</value>
+  </data>
+  <data name="titulo_ArtGenerales" xml:space="preserve">
+    <value>Datos Generales</value>
+  </data>
+  <data name="titulo_DatAarticulo" xml:space="preserve">
+    <value>Datos del Articulo</value>
+  </data>
+  <data name="titulo_ConfPassword" xml:space="preserve">
+    <value>Confirmación de Contraseña</value>
+  </data>
+  <data name="titulo_NewPassword" xml:space="preserve">
+    <value>Nueva Contraseña</value>
+  </data>
+  <data name="titulo_NombreUsuario" xml:space="preserve">
+    <value>Nombre de Usuario</value>
+  </data>
+  <data name="titulo_Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="titulo_Usuario" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="submit_CargaArchivo" xml:space="preserve">
+    <value>Cargar Archivo</value>
+  </data>
+  <data name="titulo_AltamArticulo" xml:space="preserve">
+    <value>Alta masiva de articulos</value>
+  </data>
+  <data name="titulo_DelArticulo" xml:space="preserve">
+    <value>Eliminar Articulo</value>
+  </data>
+  <data name="titulo_DelmArticulo" xml:space="preserve">
+    <value>Eliminación masiva de Articulos</value>
+  </data>
+  <data name="titulo_DetArticulo" xml:space="preserve">
+    <value>Detalle de Articulo</value>
+  </data>
+  <data name="titulo_EditArticulo" xml:space="preserve">
+    <value>Editar Articulo</value>
+  </data>
+  <data name="titulo_ListArticulo" xml:space="preserve">
+    <value>Listado de Articulos</value>
+  </data>
+  <data name="index" xml:space="preserve">
+    <value>Indice</value>
+  </data>
+  <data name="msg_EliminarRegistro" xml:space="preserve">
+    <value>¿Esta seguro de eliminar el registro?</value>
+  </data>
+  <data name="titulo_CreaEmpresa" xml:space="preserve">
+    <value>Crear Empresa</value>
+  </data>
+  <data name="titulo_CreaIcono" xml:space="preserve">
+    <value>Crear Icono</value>
+  </data>
+  <data name="titulo_CreaMarca" xml:space="preserve">
+    <value>Crear Marca</value>
+  </data>
+  <data name="titulo_CreaMenu" xml:space="preserve">
+    <value>Crear Menu</value>
+  </data>
+  <data name="titulo_CreaRol" xml:space="preserve">
+    <value>Crear Rol</value>
+  </data>
+  <data name="titulo_CreaRolMenu" xml:space="preserve">
+    <value>Crear Rol Menu</value>
+  </data>
+  <data name="titulo_CreaSucursal" xml:space="preserve">
+    <value>Crear Sucursal</value>
+  </data>
+  <data name="titulo_CreaUsuario" xml:space="preserve">
+    <value>Crear Usuario</value>
+  </data>
+  <data name="titulo_CreaUsuarioProvider" xml:space="preserve">
+    <value>Crear Usuario Provider</value>
+  </data>
+  <data name="titulo_CreaUsuarioRol" xml:space="preserve">
+    <value>Crear Usuario Rol</value>
+  </data>
+  <data name="titulo_CreaVista" xml:space="preserve">
+    <value>Crear Vista</value>
+  </data>
+  <data name="titulo_DelEmpresa" xml:space="preserve">
+    <value>Eliminar Empresa</value>
+  </data>
+  <data name="titulo_DelIcono" xml:space="preserve">
+    <value>Eliminar Icono</value>
+  </data>
+  <data name="titulo_DelMarca" xml:space="preserve">
+    <value>Eliminar Marca</value>
+  </data>
+  <data name="titulo_DelmEmpresa" xml:space="preserve">
+    <value>Eliminación masiva de Empresas</value>
+  </data>
+  <data name="titulo_DelMenu" xml:space="preserve">
+    <value>Eliminar Menu</value>
+  </data>
+  <data name="titulo_DelmIcono" xml:space="preserve">
+    <value>Eliminación masiva de Iconos</value>
+  </data>
+  <data name="titulo_DelmMarca" xml:space="preserve">
+    <value>Eliminación masiva de Marcas</value>
+  </data>
+  <data name="titulo_DelmMenu" xml:space="preserve">
+    <value>Eliminación masiva de Menus</value>
+  </data>
+  <data name="titulo_DelmRol" xml:space="preserve">
+    <value>Eliminación masiva de Roles</value>
+  </data>
+  <data name="titulo_DelmRolMenu" xml:space="preserve">
+    <value>Eliminación masiva de Rol Menu</value>
+  </data>
+  <data name="titulo_DelmSucursal" xml:space="preserve">
+    <value>Eliminación masiva de Sucursales</value>
+  </data>
+  <data name="titulo_DelmUsuario" xml:space="preserve">
+    <value>Eliminación masiva de Usuarios</value>
+  </data>
+  <data name="titulo_DelmUsuarioProvider" xml:space="preserve">
+    <value>Eliminación masiva de Usuario Providers</value>
+  </data>
+  <data name="titulo_DelmUsuarioRol" xml:space="preserve">
+    <value>Eliminación masiva de Usuario Rol</value>
+  </data>
+  <data name="titulo_DelmVista" xml:space="preserve">
+    <value>Eliminación masiva de Vistas</value>
+  </data>
+  <data name="titulo_DelRol" xml:space="preserve">
+    <value>Eliminar Rol</value>
+  </data>
+  <data name="titulo_DelRolMenu" xml:space="preserve">
+    <value>Eliminar Rol Menu</value>
+  </data>
+  <data name="titulo_DelSucursal" xml:space="preserve">
+    <value>Eliminar Sucursal</value>
+  </data>
+  <data name="titulo_DelUsuario" xml:space="preserve">
+    <value>Eliminar Usuario</value>
+  </data>
+  <data name="titulo_DelUsuarioProvider" xml:space="preserve">
+    <value>Eliminar Usuario Provider</value>
+  </data>
+  <data name="titulo_DelUsuarioRol" xml:space="preserve">
+    <value>Eliminar Usuario Rol</value>
+  </data>
+  <data name="titulo_DelVista" xml:space="preserve">
+    <value>Eliminar Vista</value>
+  </data>
+  <data name="titulo_DetEmpresa" xml:space="preserve">
+    <value>Detalle de Empresa</value>
+  </data>
+  <data name="titulo_DetIcono" xml:space="preserve">
+    <value>Detalle de Icono</value>
+  </data>
+  <data name="titulo_DetMarca" xml:space="preserve">
+    <value>Detalle de Marca</value>
+  </data>
+  <data name="titulo_DetMenu" xml:space="preserve">
+    <value>Detalle de Menu</value>
+  </data>
+  <data name="titulo_DetRol" xml:space="preserve">
+    <value>Detalle de Rol</value>
+  </data>
+  <data name="titulo_DetRolMenu" xml:space="preserve">
+    <value>Detalle de Rol Menu</value>
+  </data>
+  <data name="titulo_DetSucursal" xml:space="preserve">
+    <value>Detalle de Sucursal</value>
+  </data>
+  <data name="titulo_DetUsuario" xml:space="preserve">
+    <value>Detalle de Usuario</value>
+  </data>
+  <data name="titulo_DetUsuarioProvider" xml:space="preserve">
+    <value>Detalle de Usuario Provider</value>
+  </data>
+  <data name="titulo_DetUsuarioRol" xml:space="preserve">
+    <value>Detalle de Usuario Rol</value>
+  </data>
+  <data name="titulo_DetVista" xml:space="preserve">
+    <value>Detalle de Vista</value>
+  </data>
+  <data name="titulo_EditEmpresa" xml:space="preserve">
+    <value>Editar Empresa</value>
+  </data>
+  <data name="titulo_EditIcono" xml:space="preserve">
+    <value>Editar Icono</value>
+  </data>
+  <data name="titulo_EditMarca" xml:space="preserve">
+    <value>Editar Marca</value>
+  </data>
+  <data name="titulo_EditMenu" xml:space="preserve">
+    <value>Editar Menu</value>
+  </data>
+  <data name="titulo_EditRol" xml:space="preserve">
+    <value>Editar Rol</value>
+  </data>
+  <data name="titulo_EditRolMenu" xml:space="preserve">
+    <value>Editar Rol Menu</value>
+  </data>
+  <data name="titulo_EditSucursal" xml:space="preserve">
+    <value>Editar Sucursal</value>
+  </data>
+  <data name="titulo_EditUsuario" xml:space="preserve">
+    <value>Editar Usuario</value>
+  </data>
+  <data name="titulo_EditUsuarioProvider" xml:space="preserve">
+    <value>Editar Usuario Provider</value>
+  </data>
+  <data name="titulo_EditUsuarioRol" xml:space="preserve">
+    <value>Editar Usuario Rol</value>
+  </data>
+  <data name="titulo_EditVista" xml:space="preserve">
+    <value>Editar Vista</value>
+  </data>
+  <data name="titulo_ListEmpresa" xml:space="preserve">
+    <value>Listado de Empresas</value>
+  </data>
+  <data name="titulo_ListIcono" xml:space="preserve">
+    <value>Listado de Iconos</value>
+  </data>
+  <data name="titulo_ListMarca" xml:space="preserve">
+    <value>Listado de Marcas</value>
+  </data>
+  <data name="titulo_ListMenu" xml:space="preserve">
+    <value>Listado de Menus</value>
+  </data>
+  <data name="titulo_ListRol" xml:space="preserve">
+    <value>Listado de Roles</value>
+  </data>
+  <data name="titulo_ListRolMenu" xml:space="preserve">
+    <value>Listado de Rol Menus</value>
+  </data>
+  <data name="titulo_ListSucursal" xml:space="preserve">
+    <value>Listado de Sucursales</value>
+  </data>
+  <data name="titulo_ListUsuario" xml:space="preserve">
+    <value>Listado de Usuarios</value>
+  </data>
+  <data name="titulo_ListUsuarioProvider" xml:space="preserve">
+    <value>Listado de Usuario Providers</value>
+  </data>
+  <data name="titulo_ListUsuarioRol" xml:space="preserve">
+    <value>Listado de Usuario Rol</value>
+  </data>
+  <data name="titulo_ListVista" xml:space="preserve">
+    <value>Listado de Vistas</value>
+  </data>
+  <data name="menu_AltaCategoria" xml:space="preserve">
+    <value>Alta de Categoria</value>
+  </data>
+  <data name="menu_AltaColeccion" xml:space="preserve">
+    <value>Alta de Coleccion</value>
+  </data>
+  <data name="menu_AltaColor" xml:space="preserve">
+    <value>Alta de Color</value>
+  </data>
+  <data name="menu_AltaPresentacion" xml:space="preserve">
+    <value>Alta de Presentacion</value>
+  </data>
+  <data name="menu_AltaProveedor" xml:space="preserve">
+    <value>Alta de Proveedor</value>
+  </data>
+  <data name="menu_AltaSubCategoria" xml:space="preserve">
+    <value>Alta de SubCategoria</value>
+  </data>
+  <data name="menu_AltaTalla" xml:space="preserve">
+    <value>Alta de Talla</value>
+  </data>
+  <data name="menu_AltaTipoArticulo" xml:space="preserve">
+    <value>Alta de Tipo Articulo</value>
+  </data>
+  <data name="menu_AltaTipoLogin" xml:space="preserve">
+    <value>Alta de Tipo Login</value>
+  </data>
+  <data name="menu_AltaTipoSucursal" xml:space="preserve">
+    <value>Alta de Tipo Sucursal</value>
+  </data>
+  <data name="menu_Categoria" xml:space="preserve">
+    <value>Categorias</value>
+  </data>
+  <data name="menu_Coleccion" xml:space="preserve">
+    <value>Coleccions</value>
+  </data>
+  <data name="menu_Color" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="menu_Presentacion" xml:space="preserve">
+    <value>Presentacions</value>
+  </data>
+  <data name="menu_Proveedor" xml:space="preserve">
+    <value>Proveedors</value>
+  </data>
+  <data name="menu_SubCategoria" xml:space="preserve">
+    <value>SubCategorias</value>
+  </data>
+  <data name="menu_Talla" xml:space="preserve">
+    <value>Tallas</value>
+  </data>
+  <data name="menu_TipoArticulo" xml:space="preserve">
+    <value>Tipo Articulos</value>
+  </data>
+  <data name="menu_TipoLogin" xml:space="preserve">
+    <value>Tipo Logins</value>
+  </data>
+  <data name="menu_TipoSucursal" xml:space="preserve">
+    <value>Tipo Sucursals</value>
+  </data>
+  <data name="menu_VerCategoria" xml:space="preserve">
+    <value>Listado de Categorias</value>
+  </data>
+  <data name="menu_VerColeccion" xml:space="preserve">
+    <value>Listado de Coleccions</value>
+  </data>
+  <data name="menu_VerColor" xml:space="preserve">
+    <value>Listado de Colors</value>
+  </data>
+  <data name="menu_VerPresentacion" xml:space="preserve">
+    <value>Listado de Presentacions</value>
+  </data>
+  <data name="menu_VerProveedor" xml:space="preserve">
+    <value>Listado de Proveedors</value>
+  </data>
+  <data name="menu_VerSubCategoria" xml:space="preserve">
+    <value>Listado de SubCategorias</value>
+  </data>
+  <data name="menu_VerTalla" xml:space="preserve">
+    <value>Listado de Tallas</value>
+  </data>
+  <data name="menu_VerTipoArticulo" xml:space="preserve">
+    <value>Listado de Tipo Articulos</value>
+  </data>
+  <data name="menu_VerTipoLogin" xml:space="preserve">
+    <value>Listado de Tipo Logins</value>
+  </data>
+  <data name="menu_VerTipoSucursal" xml:space="preserve">
+    <value>Listado de Tipo Sucursals</value>
+  </data>
+  <data name="titulo_CreaCategoria" xml:space="preserve">
+    <value>Crear Categoria</value>
+  </data>
+  <data name="titulo_CreaColeccion" xml:space="preserve">
+    <value>Crear Coleccion</value>
+  </data>
+  <data name="titulo_CreaColor" xml:space="preserve">
+    <value>Crear Color</value>
+  </data>
+  <data name="titulo_CreaPresentacion" xml:space="preserve">
+    <value>Crear Presentacion</value>
+  </data>
+  <data name="titulo_CreaProveedor" xml:space="preserve">
+    <value>Crear Proveedor</value>
+  </data>
+  <data name="titulo_CreaSubCategoria" xml:space="preserve">
+    <value>Crear SubCategoria</value>
+  </data>
+  <data name="titulo_CreaTalla" xml:space="preserve">
+    <value>Crear Talla</value>
+  </data>
+  <data name="titulo_CreaTipoArticulo" xml:space="preserve">
+    <value>Crear Tipo Articulo</value>
+  </data>
+  <data name="titulo_CreaTipoLogin" xml:space="preserve">
+    <value>Crear Tipo Login</value>
+  </data>
+  <data name="titulo_CreaTipoSucursal" xml:space="preserve">
+    <value>Crear Tipo Sucursal</value>
+  </data>
+  <data name="titulo_DelCategoria" xml:space="preserve">
+    <value>Eliminar Categoria</value>
+  </data>
+  <data name="titulo_DelColeccion" xml:space="preserve">
+    <value>Eliminar Coleccion</value>
+  </data>
+  <data name="titulo_DelColor" xml:space="preserve">
+    <value>Eliminar Color</value>
+  </data>
+  <data name="titulo_DelmCategoria" xml:space="preserve">
+    <value>Eliminación masiva de Categorias</value>
+  </data>
+  <data name="titulo_DelmColeccion" xml:space="preserve">
+    <value>Eliminación masiva de Coleccions</value>
+  </data>
+  <data name="titulo_DelmColor" xml:space="preserve">
+    <value>Eliminación masiva de Colors</value>
+  </data>
+  <data name="titulo_DelmPresentacion" xml:space="preserve">
+    <value>Eliminación masiva de Presentacions</value>
+  </data>
+  <data name="titulo_DelmProveedor" xml:space="preserve">
+    <value>Eliminación masiva de Proveedors</value>
+  </data>
+  <data name="titulo_DelmSubCategoria" xml:space="preserve">
+    <value>Eliminación masiva de SubCategorias</value>
+  </data>
+  <data name="titulo_DelmTalla" xml:space="preserve">
+    <value>Eliminación masiva de Tallas</value>
+  </data>
+  <data name="titulo_DelmTipoArticulo" xml:space="preserve">
+    <value>Eliminación masiva de Tipo Articulos</value>
+  </data>
+  <data name="titulo_DelmTipoLogin" xml:space="preserve">
+    <value>Eliminación masiva de Tipo Logins</value>
+  </data>
+  <data name="titulo_DelmTipoSucursal" xml:space="preserve">
+    <value>Eliminación masiva de Tipo Sucursals</value>
+  </data>
+  <data name="titulo_DelPresentacion" xml:space="preserve">
+    <value>Eliminar Presentacion</value>
+  </data>
+  <data name="titulo_DelProveedor" xml:space="preserve">
+    <value>Eliminar Proveedor</value>
+  </data>
+  <data name="titulo_DelSubCategoria" xml:space="preserve">
+    <value>Eliminar SubCategoria</value>
+  </data>
+  <data name="titulo_DelTalla" xml:space="preserve">
+    <value>Eliminar Talla</value>
+  </data>
+  <data name="titulo_DelTipoArticulo" xml:space="preserve">
+    <value>Eliminar Tipo Articulo</value>
+  </data>
+  <data name="titulo_DelTipoLogin" xml:space="preserve">
+    <value>Eliminar Tipo Login</value>
+  </data>
+  <data name="titulo_DelTipoSucursal" xml:space="preserve">
+    <value>Eliminar Tipo Sucursal</value>
+  </data>
+  <data name="titulo_DetCategoria" xml:space="preserve">
+    <value>Detalle de Categoria</value>
+  </data>
+  <data name="titulo_DetColeccion" xml:space="preserve">
+    <value>Detalle de Coleccion</value>
+  </data>
+  <data name="titulo_DetColor" xml:space="preserve">
+    <value>Detalle de Color</value>
+  </data>
+  <data name="titulo_DetPresentacion" xml:space="preserve">
+    <value>Detalle de Presentacion</value>
+  </data>
+  <data name="titulo_DetProveedor" xml:space="preserve">
+    <value>Detalle de Proveedor</value>
+  </data>
+  <data name="titulo_DetSubCategoria" xml:space="preserve">
+    <value>Detalle de SubCategoria</value>
+  </data>
+  <data name="titulo_DetTalla" xml:space="preserve">
+    <value>Detalle de Talla</value>
+  </data>
+  <data name="titulo_DetTipoArticulo" xml:space="preserve">
+    <value>Detalle de Tipo Articulo</value>
+  </data>
+  <data name="titulo_DetTipoLogin" xml:space="preserve">
+    <value>Detalle de Tipo Login</value>
+  </data>
+  <data name="titulo_DetTipoSucursal" xml:space="preserve">
+    <value>Detalle de Tipo Sucursal</value>
+  </data>
+  <data name="titulo_EditCategoria" xml:space="preserve">
+    <value>Editar Categoria</value>
+  </data>
+  <data name="titulo_EditColeccion" xml:space="preserve">
+    <value>Editar Coleccion</value>
+  </data>
+  <data name="titulo_EditColor" xml:space="preserve">
+    <value>Editar Color</value>
+  </data>
+  <data name="titulo_EditPresentacion" xml:space="preserve">
+    <value>Editar Presentacion</value>
+  </data>
+  <data name="titulo_EditProveedor" xml:space="preserve">
+    <value>Editar Proveedor</value>
+  </data>
+  <data name="titulo_EditSubCategoria" xml:space="preserve">
+    <value>Editar SubCategoria</value>
+  </data>
+  <data name="titulo_EditTalla" xml:space="preserve">
+    <value>Editar Talla</value>
+  </data>
+  <data name="titulo_EditTipoArticulo" xml:space="preserve">
+    <value>Editar Tipo Articulo</value>
+  </data>
+  <data name="titulo_EditTipoLogin" xml:space="preserve">
+    <value>Editar Tipo Login</value>
+  </data>
+  <data name="titulo_EditTipoSucursal" xml:space="preserve">
+    <value>Editar Tipo Sucursal</value>
+  </data>
+  <data name="titulo_ListCategoria" xml:space="preserve">
+    <value>Listado de Categorias</value>
+  </data>
+  <data name="titulo_ListColeccion" xml:space="preserve">
+    <value>Listado de Coleccions</value>
+  </data>
+  <data name="titulo_ListColor" xml:space="preserve">
+    <value>Listado de Colors</value>
+  </data>
+  <data name="titulo_ListPresentacion" xml:space="preserve">
+    <value>Listado de Presentacions</value>
+  </data>
+  <data name="titulo_ListProveedor" xml:space="preserve">
+    <value>Listado de Proveedors</value>
+  </data>
+  <data name="titulo_ListSubCategoria" xml:space="preserve">
+    <value>Listado de SubCategorias</value>
+  </data>
+  <data name="titulo_ListTalla" xml:space="preserve">
+    <value>Listado de Tallas</value>
+  </data>
+  <data name="titulo_ListTipoArticulo" xml:space="preserve">
+    <value>Listado de Tipo Articulos</value>
+  </data>
+  <data name="titulo_ListTipoLogin" xml:space="preserve">
+    <value>Listado de Tipo Logins</value>
+  </data>
+  <data name="titulo_ListTipoSucursal" xml:space="preserve">
+    <value>Listado de Tipo Sucursals</value>
+  </data>
+  <data name="Detalle_EditarRuta" xml:space="preserve">
+    <value>Editar Ruta</value>
+  </data>
+  <data name="DN_activo" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="DN_activo1" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="DN_archivoPDF" xml:space="preserve">
+    <value>Archivo PDF</value>
+  </data>
+  <data name="DN_archivoXML" xml:space="preserve">
+    <value>Archivo XML</value>
+  </data>
+  <data name="DN_descRuta" xml:space="preserve">
+    <value>Descripcion</value>
+  </data>
+  <data name="DN_descTipoAlmacen" xml:space="preserve">
+    <value>Descripcion</value>
+  </data>
+  <data name="DN_descTipoAlmacen1" xml:space="preserve">
+    <value>Descripcion</value>
+  </data>
+  <data name="DN_descTipoSucursal" xml:space="preserve">
+    <value>Descripcion</value>
+  </data>
+  <data name="DN_descTipoUsuarioSucursal" xml:space="preserve">
+    <value>Descripcion</value>
+  </data>
+  <data name="DN_direccion" xml:space="preserve">
+    <value>Direccion</value>
+  </data>
+  <data name="DN_dirSucursalCalle" xml:space="preserve">
+    <value>Calle</value>
+  </data>
+  <data name="DN_dirSucursalColonia" xml:space="preserve">
+    <value>Colonia</value>
+  </data>
+  <data name="DN_dirSucursalCP" xml:space="preserve">
+    <value>CP</value>
+  </data>
+  <data name="DN_dirSucursalEstado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="DN_dirSucursalMunicipio" xml:space="preserve">
+    <value>Municipio</value>
+  </data>
+  <data name="DN_dirSucursalNoExterior" xml:space="preserve">
+    <value>No Exterior</value>
+  </data>
+  <data name="DN_dirSucursalNoExterior1" xml:space="preserve">
+    <value>No Exterior</value>
+  </data>
+  <data name="DN_dirSucursalNoInterior" xml:space="preserve">
+    <value>No Interior</value>
+  </data>
+  <data name="DN_dirSucursalPais" xml:space="preserve">
+    <value>Pais</value>
+  </data>
+  <data name="DN_emisorCalle" xml:space="preserve">
+    <value>Calle</value>
+  </data>
+  <data name="DN_emisorColonia" xml:space="preserve">
+    <value>Colonia</value>
+  </data>
+  <data name="DN_emisorCP" xml:space="preserve">
+    <value>CP</value>
+  </data>
+  <data name="DN_emisorEstado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="DN_emisorLocalidad" xml:space="preserve">
+    <value>Localidad</value>
+  </data>
+  <data name="DN_emisorMunicipio" xml:space="preserve">
+    <value>Municipio</value>
+  </data>
+  <data name="DN_emisorNoExterior" xml:space="preserve">
+    <value>No Exterior</value>
+  </data>
+  <data name="DN_emisorNoInterior" xml:space="preserve">
+    <value>No Interior</value>
+  </data>
+  <data name="DN_emisorNombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="DN_emisorPais" xml:space="preserve">
+    <value>PAis</value>
+  </data>
+  <data name="DN_emisorRfc" xml:space="preserve">
+    <value>Emisor RFC</value>
+  </data>
+  <data name="DN_fechaFactura" xml:space="preserve">
+    <value>Fecha Factura</value>
+  </data>
+  <data name="DN_fecha_alta" xml:space="preserve">
+    <value>Fecha Alta</value>
+  </data>
+  <data name="DN_fecha_alta1" xml:space="preserve">
+    <value>Fecha Alta</value>
+  </data>
+  <data name="DN_foio" xml:space="preserve">
+    <value>Folio</value>
+  </data>
+  <data name="DN_idAlmacen" xml:space="preserve">
+    <value>ID Almacen</value>
+  </data>
+  <data name="DN_idEmpresa" xml:space="preserve">
+    <value>ID Empresa</value>
+  </data>
+  <data name="DN_idEmpresa1" xml:space="preserve">
+    <value>ID Empresa</value>
+  </data>
+  <data name="DN_idFactura" xml:space="preserve">
+    <value>Id Factura</value>
+  </data>
+  <data name="DN_idRuta" xml:space="preserve">
+    <value>Id RUTA</value>
+  </data>
+  <data name="DN_idRuta1" xml:space="preserve">
+    <value>ID Ruta</value>
+  </data>
+  <data name="DN_idSucursal" xml:space="preserve">
+    <value>ID Sucursal</value>
+  </data>
+  <data name="DN_idTipoAlmacen" xml:space="preserve">
+    <value>ID Tipo Almacen</value>
+  </data>
+  <data name="DN_idTipoSucursal" xml:space="preserve">
+    <value>ID Tipo Sucursal</value>
+  </data>
+  <data name="DN_idTipoUsuarioSucursal" xml:space="preserve">
+    <value>Tipo Sucursal</value>
+  </data>
+  <data name="DN_idUsuario" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="DN_idUsuario_alta" xml:space="preserve">
+    <value>ID Usuario Alta</value>
+  </data>
+  <data name="DN_idUsuario_alta1" xml:space="preserve">
+    <value>ID Usuario Alta</value>
+  </data>
+  <data name="DN_importeIVA" xml:space="preserve">
+    <value>Importe IVA</value>
+  </data>
+  <data name="DN_moneda" xml:space="preserve">
+    <value>Moneda</value>
+  </data>
+  <data name="DN_nombreAlmacen" xml:space="preserve">
+    <value>Nombre Almacen</value>
+  </data>
+  <data name="DN_nombreSucursal" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="DN_receptorCalle" xml:space="preserve">
+    <value>Calle</value>
+  </data>
+  <data name="DN_receptorColonia" xml:space="preserve">
+    <value>Colonia</value>
+  </data>
+  <data name="DN_receptorCP" xml:space="preserve">
+    <value>CP</value>
+  </data>
+  <data name="DN_receptorEstado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="DN_receptorLocalidad" xml:space="preserve">
+    <value>Localidad</value>
+  </data>
+  <data name="DN_receptorMunicipio" xml:space="preserve">
+    <value>Municipio</value>
+  </data>
+  <data name="DN_receptorNoExterior" xml:space="preserve">
+    <value>No Exterior</value>
+  </data>
+  <data name="DN_receptorNoInterior" xml:space="preserve">
+    <value>No Interior</value>
+  </data>
+  <data name="DN_receptorNombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="DN_receptorPais" xml:space="preserve">
+    <value>PAis</value>
+  </data>
+  <data name="DN_receptorRfc" xml:space="preserve">
+    <value>Receptor RFC</value>
+  </data>
+  <data name="DN_serie" xml:space="preserve">
+    <value>Serie</value>
+  </data>
+  <data name="DN_subtotal" xml:space="preserve">
+    <value>Subtotal</value>
+  </data>
+  <data name="DN_tasaIVA" xml:space="preserve">
+    <value>IVA</value>
+  </data>
+  <data name="DN_telefonoSucursal" xml:space="preserve">
+    <value>Telefono</value>
+  </data>
+  <data name="DN_total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="DT_dirSucursalCP" xml:space="preserve">
+    <value>El codigo postal no tiene el formato correcto</value>
+  </data>
+  <data name="DT_dirSucursalCP1" xml:space="preserve">
+    <value>El formato no es el correcto</value>
+  </data>
+  <data name="DT_telefonoSucursal" xml:space="preserve">
+    <value>El telefono no tiene el formato correcto</value>
+  </data>
+  <data name="errorSeleccionCatalogo" xml:space="preserve">
+    <value>Por favor selecciona el catalogo</value>
+  </data>
+  <data name="idUsuarioSucursal" xml:space="preserve">
+    <value>ID Ususario Sucursal</value>
+  </data>
+  <data name="MaxLEN_dirSucursalCalle" xml:space="preserve">
+    <value>La calle no debe de ser mayor a 50 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalCalle1" xml:space="preserve">
+    <value>El tamaño maximo es de 50 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalColonia" xml:space="preserve">
+    <value>La colonia no debe de ser mayor a 50 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalColonia1" xml:space="preserve">
+    <value>El tamaño maximo es de 50 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalCP" xml:space="preserve">
+    <value>EL codigo Postal debe de tener 5 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalEstado" xml:space="preserve">
+    <value>El estado no debe de ser mayor a 50 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalEstado1" xml:space="preserve">
+    <value>El tamaño maximo es de 50 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalMunicipio" xml:space="preserve">
+    <value>El municipio no debe de ser mayor a 50 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalMunicipio1" xml:space="preserve">
+    <value>El tamaño maximo es de 50 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalPais" xml:space="preserve">
+    <value>El pais no debe de ser mayor a 50 caracteres</value>
+  </data>
+  <data name="MaxLEN_dirSucursalPais1" xml:space="preserve">
+    <value>El tamaño maximo es de 50 caracteres</value>
+  </data>
+  <data name="menu_TipoAlmacen" xml:space="preserve">
+    <value>Tipo Almacen</value>
+  </data>
+  <data name="menu_tipoSucursal1" xml:space="preserve">
+    <value>Tipo Sucursal</value>
+  </data>
+  <data name="menu_TipoUsuarioSucursal" xml:space="preserve">
+    <value>Tipo Usuario sucursal</value>
+  </data>
+  <data name="menu_UsuarioSucursal" xml:space="preserve">
+    <value>Usuario Sucursal</value>
+  </data>
+  <data name="MinLEN_descRuta" xml:space="preserve">
+    <value>El tamaño minimo de la ruta son 5 caracteres</value>
+  </data>
+  <data name="MinLEN_descTipoSucursal" xml:space="preserve">
+    <value>La descripcion al menos debe tener 5 caracteres</value>
+  </data>
+  <data name="MinLEN_descTipoUsuarioSucursal" xml:space="preserve">
+    <value>La descripcion al menos debe tener 5 caracteres</value>
+  </data>
+  <data name="msg_ExitenciaUsuarioSucursal" xml:space="preserve">
+    <value>La informacion ya existe en la base de datos.</value>
+  </data>
+  <data name="msg_SeleccioneArchivo" xml:space="preserve">
+    <value>Por favor seleccione el archivo</value>
+  </data>
+  <data name="msg_SeleccioneArchivoPDF" xml:space="preserve">
+    <value>Seleccione el archivo PDF</value>
+  </data>
+  <data name="msg_SeleccioneArchivoXML" xml:space="preserve">
+    <value>Seleccione el archivo XML</value>
+  </data>
+  <data name="msg_SeleccionePDF" xml:space="preserve">
+    <value>Por favor seleccione un archivo PDF.</value>
+  </data>
+  <data name="msg_SinArchivo" xml:space="preserve">
+    <value>Sin Archivo</value>
+  </data>
+  <data name="msg_TipoArchivo" xml:space="preserve">
+    <value>Tipo de archivo incorrecto</value>
+  </data>
+  <data name="REQ_descRuta" xml:space="preserve">
+    <value>La descripcion es requerida</value>
+  </data>
+  <data name="REQ_descTipoAlmacen" xml:space="preserve">
+    <value>Por favor ingrese la descripcion del tipo de Almacen</value>
+  </data>
+  <data name="REQ_descTipoSucursal" xml:space="preserve">
+    <value>Por favor ingrese la descripcion</value>
+  </data>
+  <data name="REQ_descTipoUsuarioSucursal" xml:space="preserve">
+    <value>Por favor ingrese la descripcion</value>
+  </data>
+  <data name="REQ_direccion" xml:space="preserve">
+    <value>La direccion es requerida</value>
+  </data>
+  <data name="REQ_emisorNombre" xml:space="preserve">
+    <value>El Nombre del emisor es obligatorio</value>
+  </data>
+  <data name="REQ_emisorRfc" xml:space="preserve">
+    <value>El RFC del emisor es obligatorio</value>
+  </data>
+  <data name="REQ_fechaFactura" xml:space="preserve">
+    <value>La fecha Factura es Obligatoria</value>
+  </data>
+  <data name="REQ_foio" xml:space="preserve">
+    <value>El Folio es Obligatoria</value>
+  </data>
+  <data name="REQ_idSucursal" xml:space="preserve">
+    <value>Por favor seleccione la sucursal</value>
+  </data>
+  <data name="REQ_idTipoAlmacen" xml:space="preserve">
+    <value>Por favor seleccione el tipo de almacen</value>
+  </data>
+  <data name="REQ_idTipoSucursal" xml:space="preserve">
+    <value>Por favor seleccione el tipo de sucursal</value>
+  </data>
+  <data name="REQ_idTipoSucursal1" xml:space="preserve">
+    <value>El Tipo Sucursal es Requerido</value>
+  </data>
+  <data name="REQ_idTipoUsuarioSucursal" xml:space="preserve">
+    <value>Por favor ingrese el Tipo Usuario</value>
+  </data>
+  <data name="REQ_moneda" xml:space="preserve">
+    <value>La moneda es Obligatoria</value>
+  </data>
+  <data name="REQ_nombreAlmacen" xml:space="preserve">
+    <value>Por favor escriba el Nombre</value>
+  </data>
+  <data name="REQ_nombreSucursal" xml:space="preserve">
+    <value>Por favor ingrese el nombre de la Sucusal</value>
+  </data>
+  <data name="REQ_nombreSucursal1" xml:space="preserve">
+    <value>Por favor ingrese el nombre de la Sucusal</value>
+  </data>
+  <data name="REQ_receptorNombre" xml:space="preserve">
+    <value>El Nombre del receptor es obligatorio</value>
+  </data>
+  <data name="REQ_receptorRfc" xml:space="preserve">
+    <value>El RFC del receptor es obligatorio</value>
+  </data>
+  <data name="REQ_serie" xml:space="preserve">
+    <value>La serie es Obligatoria</value>
+  </data>
+  <data name="REQ_subtotal" xml:space="preserve">
+    <value>El subtotal es obligatorio</value>
+  </data>
+  <data name="REQ_telefonoSucursal" xml:space="preserve">
+    <value>Por favor ingrese el telefono de la sucursal</value>
+  </data>
+  <data name="REQ_telefonoSucursal1" xml:space="preserve">
+    <value>El telefono de la sucusal es Requerido</value>
+  </data>
+  <data name="REQ_total" xml:space="preserve">
+    <value>El total es obligatorio</value>
+  </data>
+  <data name="titulo_AltasFacturasIndividuales" xml:space="preserve">
+    <value>Alta de Facturas Individual.</value>
+  </data>
+  <data name="titulo_AltasFacturasXML" xml:space="preserve">
+    <value>Alta de Facturas por Archivo XML.</value>
+  </data>
+  <data name="titulo_CrearFacturas" xml:space="preserve">
+    <value>Crear Facturas</value>
+  </data>
+  <data name="titulo_CrearRuta" xml:space="preserve">
+    <value>Crear Ruta</value>
+  </data>
+  <data name="titulo_DetalleFactura" xml:space="preserve">
+    <value>Detalle de Factura</value>
+  </data>
+  <data name="titulo_EditarRuta" xml:space="preserve">
+    <value>Editar Ruta</value>
+  </data>
+  <data name="titulo_EliminarFactura" xml:space="preserve">
+    <value>Eliminacion de Facturas</value>
+  </data>
+  <data name="titulo_EliminarRuta" xml:space="preserve">
+    <value>Eliminar Ruta</value>
+  </data>
+  <data name="titulo_Importar" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="titulo_ListadoFactura" xml:space="preserve">
+    <value>Listado Factura</value>
+  </data>
+  <data name="titulo_ListadoRuta" xml:space="preserve">
+    <value>Listado Ruta</value>
+  </data>
+  <data name="linkCargaM" xml:space="preserve">
+    <value>Cargar Archivo</value>
+  </data>
+  <data name="linkCrear" xml:space="preserve">
+    <value>Crear Nuevo</value>
+  </data>
+  <data name="linkEditar" xml:space="preserve">
+    <value>Editar Registro</value>
+  </data>
+  <data name="linknuevo" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="linkRegresar" xml:space="preserve">
+    <value>Regresar a la Lista</value>
+  </data>
+</root>

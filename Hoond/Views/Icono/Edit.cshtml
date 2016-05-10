@@ -1,0 +1,120 @@
+﻿@model Hoond.Models.Icono
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="icon-edit"><h2>@Content.titulo_EditIcono</h2></div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<div class="grid">
+    <div class="grid_row">
+        @if(!ViewBag.isAdmin)
+        {
+            @Html.HiddenFor(model => model.idIcono)  
+        }
+        else
+        {
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idIcono)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.idIcono)
+                @Html.ValidationMessageFor(model => model.idIcono)
+            </div>
+        </div>
+        }
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.descIcono)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.descIcono)
+                @Html.ValidationMessageFor(model => model.descIcono)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.claseIcono)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.claseIcono)
+                @Html.ValidationMessageFor(model => model.claseIcono)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.rutaIcono)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.rutaIcono)
+                @Html.ValidationMessageFor(model => model.rutaIcono)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.x)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.x)
+                @Html.ValidationMessageFor(model => model.x)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.y)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.y)
+                @Html.ValidationMessageFor(model => model.y)
+            </div>
+        </div>
+        @Html.HiddenFor(model => model.idUsuario_alta)   
+        @if(!ViewBag.isAdmin)
+        {
+            @Html.HiddenFor(model => model.fecha_alta)  
+        }
+        else
+        {
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.fecha_alta)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.fecha_alta)
+                @Html.ValidationMessageFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(!ViewBag.isAdmin)
+        {
+            @Html.HiddenFor(model => model.activo)  
+        }
+        else
+        {
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.activo)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.activo)
+                @Html.ValidationMessageFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        <div class="grid_item center">
+            <input type="submit" value="@Content.submit_Guardar" />
+        </div>
+        <div class="grid_item center">
+            <p class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</p>
+        </div>
+    </div>
+</div>
+}
+
+
+

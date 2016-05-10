@@ -1,0 +1,11 @@
+﻿@using Hoond.app_GlobalResources;
+@model Hoond.Models.Presentacion
+<div id="DialogPresentacion" title="@Content.titulo_CreaPresentacion" style="display:none">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descPresentacion)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.descPresentacion, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.descPresentacion)
+    </div>
+</div>

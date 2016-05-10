@@ -1,0 +1,11 @@
+﻿@using Hoond.app_GlobalResources;
+@model Hoond.Models.TipoLogin
+<div id="DialogTipoLogin" title="@Content.titulo_CreaTipoLogin" style="display:none">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descTipoLogin)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.descTipoLogin, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.descTipoLogin)
+    </div>
+</div>

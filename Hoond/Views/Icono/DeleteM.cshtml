@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Hoond.Models.Icono>
+@using Hoond.app_GlobalResources;
+@using CaptchaMvc.HtmlHelpers;
+@{
+    ViewBag.Title = "DeleteM";
+}
+<div class="icon-delete"><h2>@Content.titulo_DelmIcono</h2></div>
+<h3>@Content.msg_EliminarMasivo</h3>
+@using (Html.BeginForm("DeleteConfirmedM", "Icono", FormMethod.Post))
+{
+    @Html.Captcha(Content.msg_CapRefresh, Content.msg_CapMsg, 4)
+    @ViewBag.Error
+    <p>
+        <input type="submit" value="@Content.submit_EliminarC" />
+        <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+    </p>	
+	<table>
+		<thead>
+		<tr>
+			<th>
+                <input type="checkbox" id="idH" checked="checked" />
+            </th>
+            <th data-toggle="true">
+                <div>
+                    @Html.DisplayNameFor(model => model.descIcono)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.claseIcono)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.rutaIcono)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.x)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.y)
+                </div>
+            </th>
+	    </tr>
+		</thead>
+		<tbody>
+	
+	@foreach (var item in Model) {
+		<tr>
+			<td>
+                <input type="checkbox" name="ids" value="@item.idIcono" checked="checked" />
+            </td>
+	        <td>
+                @Html.DisplayFor(modelItem => item.descIcono)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.claseIcono)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.rutaIcono)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.x)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.y)
+            </td>  
+	    </tr>
+	}
+		</tbody>
+	</table>
+}
+

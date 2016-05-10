@@ -1,0 +1,106 @@
+﻿@model Hoond.Models.Menu
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Details";
+}
+<div class="icon-details"><h2>@Content.titulo_DetMenu</h2></div>
+<div class="grid">
+    <div class="grid_row">
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.idMenu)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.idMenu)
+            </div>
+        </div>
+        }
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Menu2.descMenu)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Menu2.descMenu)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Vista.descVista)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Vista.descVista)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.descMenu)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.descMenu)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.etiqueta)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.etiqueta)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.orden)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.orden)
+            </div>
+        </div>  
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Icono.descIcono)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Icono.descIcono)
+            </div>
+        </div>  
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.fecha_alta)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(ViewBag.isAdmin){
+        <div class="grid_item">
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.activo)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        <div class="grid_item center">
+            <span class="link-txt editr">@Html.ActionLink(Content.link_Editar, "Edit", new { id=Model.idMenu })</span>
+        </div>
+        <div class="grid_item center">
+            <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+        </div>
+    </div>
+</div>

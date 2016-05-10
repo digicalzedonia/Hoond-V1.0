@@ -1,0 +1,35 @@
+﻿@model Hoond.Models.RegisterExternalLoginModel
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Register";
+}
+<hgroup class="title">
+    <h2>@String.Format(Content.titulo_ExternalCon, @ViewBag.ProviderDisplayName)</h2>
+</hgroup>
+
+@using (Html.BeginForm("ExternalLoginConfirmation", "Login", new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <p>
+            @String.Format(Content.titulo_ExternalCon, @ViewBag.ProviderDisplayName)
+        </p>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.nombreusuario)
+                @Html.TextBoxFor(m => m.nombreusuario, new { @class = "uCase" })
+                @Html.ValidationMessageFor(m => m.nombreusuario)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.username)
+                @Html.TextBoxFor(m => m.username, new { @class = "uCase" })
+                @Html.ValidationMessageFor(m => m.username)
+            </li>
+        </ol>
+        @Html.HiddenFor(m => m.id)
+        @Html.HiddenFor(m => m.accesstoken)
+        @Html.HiddenFor(m => m.provider)
+        @Html.HiddenFor(m => m.email)
+        <input type="submit" value="@Content.submit_Registrar" />
+    </fieldset>
+}

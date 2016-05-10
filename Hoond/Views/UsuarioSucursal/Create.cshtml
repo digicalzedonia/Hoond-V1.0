@@ -1,0 +1,69 @@
+﻿@model Hoond.Models.UsuarioSucursal
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Create";
+}
+<div class="icon-create"><h2>@Content.titulo_Crear UsuarioSucursal</h2></div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+      @Html.Raw(ViewBag.error)
+    
+    <div class="grid">
+        <div class="grid_row">
+        @*@Html.Action("InsertSucursal","Comun")*@
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idSucursal, "Sucursal")
+            </div>
+            <div class="editor-field">
+                @*En caso de desencadenamineto cabiar esta linea indicando las entidadea a desencadenar separadas por coma *@
+                @*@Html.DropDownList("idSucursal", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'Entidad1,Entidad2')" })*@
+                @Html.DropDownList("idSucursal", String.Empty)
+                @Html.ValidationMessageFor(model => model.idSucursal)
+                @*Indicar el campo que va a retonar al hacer la captura del formulario modal *@
+                <a id='name' href="#" onclick="OpenDialog('Sucursal', 'Campo(s) a retornar')" class="addnew">@Content.link_nuevo</a>
+            </div>
+        </div>
+        @*@Html.Action("InsertUsuario1","Comun")*@
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idUsuario, "Usuario1")
+            </div>
+            <div class="editor-field">
+                @*En caso de desencadenamineto cabiar esta linea indicando las entidadea a desencadenar separadas por coma *@
+                @*@Html.DropDownList("idUsuario", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'Entidad1,Entidad2')" })*@
+                @Html.DropDownList("idUsuario", String.Empty)
+                @Html.ValidationMessageFor(model => model.idUsuario)
+                @*Indicar el campo que va a retonar al hacer la captura del formulario modal *@
+                <a id='name' href="#" onclick="OpenDialog('Usuario1', 'Campo(s) a retornar')" class="addnew">@Content.link_nuevo</a>
+            </div>
+        </div>
+        @*@Html.Action("InsertTipoUsuarioSucursal","Comun")*@
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idTipoUsuarioSucursal, "TipoUsuarioSucursal")
+            </div>
+            <div class="editor-field">
+                @*En caso de desencadenamineto cabiar esta linea indicando las entidadea a desencadenar separadas por coma *@
+                @*@Html.DropDownList("idTipoUsuarioSucursal", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'Entidad1,Entidad2')" })*@
+                @Html.DropDownList("idTipoUsuarioSucursal", String.Empty)
+                @Html.ValidationMessageFor(model => model.idTipoUsuarioSucursal)
+                @*Indicar el campo que va a retonar al hacer la captura del formulario modal *@
+                <a id='name' href="#" onclick="OpenDialog('TipoUsuarioSucursal', 'Campo(s) a retornar')" class="addnew">@Content.link_nuevo</a>
+            </div>
+        </div>
+        </div>
+        <div class="grid_row">
+            <div class="grid_item center">
+                <input type="submit" value="@Content.submit_Crear" />
+            </div>
+            <div class="grid_item center">
+                <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+            </div>
+        </div>
+    </diV>
+}
+
+

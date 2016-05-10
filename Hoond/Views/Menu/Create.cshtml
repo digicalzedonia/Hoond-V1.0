@@ -1,0 +1,79 @@
+﻿@model Hoond.Models.Menu
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Create";
+}
+<div class="icon-create"><h2>@Content.titulo_CreaMenu</h2></div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="grid">
+        <div class="grid_row">
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idMenu_padre, "Menu2")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idMenu_padre", String.Empty)
+                @Html.ValidationMessageFor(model => model.idMenu_padre)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idVista, "Vista")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idVista", String.Empty)
+                @Html.ValidationMessageFor(model => model.idVista)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.descMenu)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.descMenu)
+                @Html.ValidationMessageFor(model => model.descMenu)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.etiqueta)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.etiqueta)
+                @Html.ValidationMessageFor(model => model.etiqueta)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.orden)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.orden)
+                @Html.ValidationMessageFor(model => model.orden)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idIcono, "Icono")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idIcono", String.Empty)
+                @Html.ValidationMessageFor(model => model.idIcono)
+            </div>
+        </div>
+        </div>
+        <div class="grid_row">
+            <div class="grid_item center">
+                <input type="submit" value="@Content.submit_Crear" />
+            </div>
+            <div class="grid_item center">
+                <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+            </div>
+        </div>
+    </diV>
+}
+
+

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="afc32254b485480b8d4bea392133b786" Name="Diagram1">
+        <EntityTypeShape EntityType="HoondDBEntitiess.Empresa" Width="1.5" PointX="5.25" PointY="58" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Icono" Width="1.5" PointX="5.25" PointY="53.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Menu" Width="1.5" PointX="7.5" PointY="63.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Rol" Width="1.5" PointX="5.25" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.RolMenu" Width="1.5" PointX="12.75" PointY="79.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Usuario" Width="1.5" PointX="3" PointY="63.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.UsuarioProvider" Width="1.5" PointX="8.25" PointY="76.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.UsuarioRol" Width="1.5" PointX="7.5" PointY="68.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Vista" Width="1.5" PointX="10.5" PointY="61.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Almacen" Width="1.5" PointX="10.5" PointY="66.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.AlmacenUbicacion" Width="1.5" PointX="18.75" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Articulo" Width="1.5" PointX="13.5" PointY="62.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.ArticuloCaracteristica" Width="1.5" PointX="18.75" PointY="67.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.ArticuloPrecio" Width="1.5" PointX="21.75" PointY="66.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Caracteristica" Width="1.5" PointX="10.5" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Categoria" Width="1.5" PointX="13.5" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Coleccion" Width="1.5" PointX="7.5" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Color" Width="1.5" PointX="7.5" PointY="72.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Marca" Width="1.5" PointX="13.5" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Mensajeria" Width="1.5" PointX="10.5" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Presentacion" Width="1.5" PointX="24" PointY="63.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Proveedor" Width="1.5" PointX="16.5" PointY="65.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.ProveedorContacto" Width="1.5" PointX="21.75" PointY="71.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.RazonSocial" Width="1.5" PointX="21.75" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.SubCategoria" Width="1.5" PointX="24.75" PointY="71.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Sucursal" Width="1.5" PointX="16.5" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Talla" Width="1.5" PointX="24" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoAlmacen" Width="1.5" PointX="16.5" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoArticulo" Width="1.5" PointX="18.75" PointY="62.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoArticuloCaracteristica" Width="1.5" PointX="24" PointY="68.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoImporte" Width="1.5" PointX="16.5" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoSucursal" Width="1.5" PointX="10.5" PointY="75.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoUbicacion" Width="1.5" PointX="13.5" PointY="75.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Ubicacion" Width="1.5" PointX="24.75" PointY="75.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.UsuarioSucursal" Width="1.5" PointX="18.75" PointY="73.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.ValorCaracteristica" Width="1.5" PointX="21.75" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.ASPStateTempApplications" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.ASPStateTempSessions" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.sysdiagrams" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Divisa" Width="1.5" PointX="5.25" PointY="71.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Estatus" Width="1.5" PointX="10.5" PointY="79.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Provider" Width="1.5" PointX="6" PointY="94.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Ruta" Width="1.5" PointX="5.25" PointY="78.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoEstatus" Width="1.5" PointX="5.25" PointY="81.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoLogin" Width="1.5" PointX="0.75" PointY="68.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoPermiso" Width="1.5" PointX="5.25" PointY="84.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.TipoUsuarioSucursal" Width="1.5" PointX="5.25" PointY="87.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.Factura" Width="1.5" PointX="16.5" PointY="78" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.FacturaConcepto" Width="1.5" PointX="24.75" PointY="79.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoondDBEntitiess.LogModificacion" Width="1.5" PointX="5.25" PointY="91" IsExpanded="true" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Almacen_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ArticuloPrecio_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Caracteristica_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Categoria_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Coleccion_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Color_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Empresa_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Marca_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Mensajeria_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Presentacion_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Proveedor_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_RazonSocial_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Sucursal_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Talla_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoAlmacen_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoArticulo_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoImporte_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoSucursal_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoUbicacion_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_UsuarioRol_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Icono_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Menu_Icono" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Vista_Icono" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Menu_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Menu_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Menu_Vista" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_RolMenu_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Rol_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_RolMenu_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_UsuarioRol_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_RolMenu_TipoPermiso" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_RolMenu_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Almacen_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_AlmacenUbicacion_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ArticuloCaracteristica_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ArticuloPrecio_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Caracteristica_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Categoria_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Coleccion_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Color_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Divisa_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Estatus_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Factura_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_FacturaConcepto_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_LogModificacion_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Marca_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Mensajeria_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Presentacion_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Proveedor_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ProveedorContacto_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_RazonSocial_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Ruta_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_SubCategoria_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Sucursal_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Talla_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoAlmacen_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoArticulo_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoArticuloCaracteristica_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoEstatus_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoImporte_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoLogin_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoPermiso_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoSucursal_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoUbicacion_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoUsuarioSucursal_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Ubicacion_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Usuario_TipoLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Usuario_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_usuarioProvider_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_usuarioProvider_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_UsuarioRol_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_UsuarioRol_usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_UsuarioSucursal_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_UsuarioSucursal_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ValorCaracteristica_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Vista_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_UsuarioProvider_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Almacen_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Almacen_TipoAlmacen" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_AlmacenUbicacion_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_AlmacenUbicacion_Ubicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_Coleccion" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_Presentacion" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_SubCategoria" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_Talla" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Articulo_TipoArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ArticuloCaracteristica_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ArticuloPrecio_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ArticuloCaracteristica_Caracteristica" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ArticuloCaracteristica_ValorCaracteristica" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ArticuloPrecio_Divisa" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ArticuloPrecio_TipoImporte" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoArticuloCaracteristica_Caracteristica" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ValorCaracteristica_Caracteristica" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Categoria_TipoArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_SubCategoria_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Coleccion_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Color_TipoArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Marca_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoArticulo_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Presentacion_TipoArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_ProveedorContacto_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_RazonSocial_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_RazonSocial_RazonSocial" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Sucursal_TipoSucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_UsuarioSucursal_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Talla_TipoArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_TipoArticuloCaracteristica_TipoArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Ubicacion_TipoUbicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Ubicacion_Ubicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_UsuarioSucursal_TipoUsuarioSucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Estatus_TipoEstatus" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_Factura_Ruta" ManuallyRouted="false" />
+        <AssociationConnector Association="HoondDBEntitiess.FK_FacturaConcepto_Factura" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

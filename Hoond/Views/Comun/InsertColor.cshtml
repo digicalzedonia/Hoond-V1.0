@@ -1,0 +1,18 @@
+﻿@using Hoond.app_GlobalResources;
+@model Hoond.Models.Color
+<div id="DialogColor" title="@Content.titulo_CreaColor" style="display:none">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.claveColor)
+    </div>
+    <div class="editor-field">
+        @Html.TextBox("claveColor2", null, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.claveColor)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descColor)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.descColor, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.descColor)
+    </div>
+</div>

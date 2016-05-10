@@ -1,0 +1,54 @@
+﻿@model Hoond.Models.RolMenu
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Create";
+}
+<div class="icon-create"><h2>@Content.titulo_CreaRolMenu</h2></div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="grid">
+        <div class="grid_row">
+        @Html.Action("InsertRol","Comun")
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idRol, "Rol")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idRol", String.Empty)
+                @Html.ValidationMessageFor(model => model.idRol)
+                <a id='name' href="#" onclick="OpenDialog('Rol', 'descRol')" class="addnew">@Content.link_nuevo</a>
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idMenu, "Menu")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idMenu", String.Empty)
+                @Html.ValidationMessageFor(model => model.idMenu)
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idTipoPermiso, "TipoPermiso")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("idTipoPermiso", String.Empty)
+                @Html.ValidationMessageFor(model => model.idTipoPermiso)
+            </div>
+        </div>
+        </div>
+        <div class="grid_row">
+            <div class="grid_item center">
+                <input type="submit" value="@Content.submit_Crear" />
+            </div>
+            <div class="grid_item center">
+                <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+            </div>
+        </div>
+    </diV>
+}
+
+

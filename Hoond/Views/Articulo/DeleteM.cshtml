@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Hoond.Models.Articulo>
+@using Hoond.app_GlobalResources;
+@using CaptchaMvc.HtmlHelpers;
+@{
+    ViewBag.Title = "DeleteM";
+}
+<div class="icon-delete"><h2>@Content.titulo_DelmArticulo</h2></div>
+<h3>@Content.msg_EliminarMasivo</h3>
+@using (Html.BeginForm("DeleteConfirmedM", "Articulo", FormMethod.Post))
+{
+    @Html.Captcha(Content.msg_CapRefresh, Content.msg_CapMsg, 4)
+    @ViewBag.Error
+    <p>
+        <input type="submit" value="@Content.submit_EliminarC" />
+        <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+    </p>	
+	<table>
+		<thead>
+		<tr>
+			<th>
+                <input type="checkbox" id="idH" checked="checked" />
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.sku)
+                </div>
+            </th>
+            <th data-toggle="true">
+                <div>
+                    @Html.DisplayNameFor(model => model.barcode)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.temporada)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.claveArticulo)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.descArticulo)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.nombreArticulo)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.claveColor)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.claveTalla)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.cantidadPresentacion)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.epcPrefijo)
+                </div>
+            </th>
+	        <th data-hide="phone">
+                <div>
+                    @Html.DisplayNameFor(model => model.epcSerie)
+                </div>
+            </th>
+	    </tr>
+		</thead>
+		<tbody>
+	
+	@foreach (var item in Model) {
+		<tr>
+			<td>
+                <input type="checkbox" name="ids" value="@item.idArticulo" checked="checked" />
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.sku)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.barcode)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.temporada)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.claveArticulo)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.descArticulo)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.nombreArticulo)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.claveColor)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.claveTalla)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.cantidadPresentacion)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.epcPrefijo)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.epcSerie)
+            </td>  
+	    </tr>
+	}
+		</tbody>
+	</table>
+}
+

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Hoond.Models.Factura>
+@using Hoond.app_GlobalResources;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Content.titulo_ListadoFactura</h2>
+
+<p class="link-txt create">
+    @Html.ActionLink(Content.linkCrear, "Create")
+</p>
+<table>
+    <thead>
+        <tr>
+            
+            <th data-hide="phone">
+                @Html.DisplayNameFor(model => model.serie)
+            </th>
+            <th data-hide="phone">
+                @Html.DisplayNameFor(model => model.foio)
+            </th>
+            <th data-hide="phone">
+                @Html.DisplayNameFor(model => model.fechaFactura)
+            </th>
+           
+            <th data-hide="phone">
+                @Html.DisplayNameFor(model => model.total)
+            </th>
+            <th data-hide="phone">
+                @Html.DisplayNameFor(model => model.emisorRfc)
+            </th>
+            <th data-hide="phone">
+                @Html.DisplayNameFor(model => model.emisorNombre)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.serie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.foio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaFactura)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emisorRfc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emisorNombre)
+            </td>
+           
+          
+            <td>
+                <div class="buttons">
+                   
+                    <a href="@Url.Action("Details", new { id = item.idFactura })">
+                        <div class="details"></div>
+                    </a>
+                    <a href="@Url.Action("Delete", new { id = item.idFactura })">
+                        <div class="delete"></div>
+                    </a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

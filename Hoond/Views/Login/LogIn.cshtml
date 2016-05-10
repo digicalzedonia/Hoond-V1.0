@@ -1,0 +1,37 @@
+﻿@model Hoond.Models.UserLogin
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "LogIn";
+}
+<div class="timeout"><h2>@Content.titulo_ExternalIndex</h2></div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, @Content.msg_error);
+    <div class="grid">
+        <div class="row">
+            <div class="grid_item">
+                <div class="editor-label">@Html.LabelFor(model => model.username)</div>
+                <div class="editor-field mail">
+                    @Html.TextBoxFor(model => model.username, new { @class = "uCase" })
+                    @Html.ValidationMessageFor(model => model.username)
+                </div>
+            </div>
+            <div class="grid_item">
+                <div class="editor-label">@Html.LabelFor(model => model.password)</div>
+                <div class="editor-field">
+                    @Html.PasswordFor(model => model.password)
+                    @Html.ValidationMessageFor(model => model.password)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="grid_item">
+                <input type="submit" value="Log In" />
+            </div>
+        </div>     
+    </div>
+}
+<section class="social" id="socialLoginForm">
+    <h2>@Content.titulo_External</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>

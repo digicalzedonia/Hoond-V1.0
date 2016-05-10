@@ -1,0 +1,26 @@
+﻿@using Hoond.app_GlobalResources;
+<div class="grid">
+    <div class="row">
+        <hr />
+        <p>
+            <div class="grid_item nest">
+                @Content.msg_BusquedaCamp <a class="addnew show" id="show1">+</a>
+                <div class="grid_item nest hide" id="hide1">
+                    <div class="grid_item">@Html.DropDownList("cmbCampo")</div>
+                    <div class="grid_item">@Content.msg_BusquedaVal</div>
+                    <div class="grid_item">@Html.TextBox("txtBusqueda", null, new { @class = "uCase" })</div>
+                    <div class="grid_item"><input type="submit" value="Buscar" /></div>
+                </div>
+            </div>
+        </p>
+    </div>
+    <div class="row">
+        <p>
+            <hr />
+            <div class="grid_item nest">
+                @Content.msg_Listar <a class="addnew show" id="show2">+</a> <div class="grid_item hide" id="hide2">@Html.DropDownList("cmbPaginado")</div>
+            </div>
+            <hr />
+        </p>
+    </div>
+</div>

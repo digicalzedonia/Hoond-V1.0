@@ -1,0 +1,29 @@
+﻿<div id="btn-space">
+</div>
+<div class="header-b1">
+    <img src="~/Content/images/logo.png" />
+</div>
+<div class="header-b2">
+    <div id="user">
+        <div class="avatar"></div>
+        @if (Request.IsAuthenticated)
+        {
+            <span class="name">@Html.Encode(User.Identity.Name)</span>
+        }
+    </div>
+    <a href=@Url.Action("Index","Config")><img src="~/Content/images/settings.png" /></a>
+    <div>
+        @if (Request.IsAuthenticated)
+        {
+            <a href=@Url.Action("Logout", "Login" )>
+                <img src="~/Content/images/logout.png" />
+            </a>
+        }
+        else
+        {
+            <a href=@Url.Action("Login", "Login")>
+                <img src="~/Content/images/logout.png" />
+            </a>
+        }
+    </div>
+</div>

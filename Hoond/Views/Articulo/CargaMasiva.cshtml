@@ -1,0 +1,16 @@
+﻿@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "CargaMasiva";
+}
+<h2>@Content.titulo_AltamArticulo</h2>
+@using (Html.BeginForm("CargaMasiva", "Articulo", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.Raw(ViewBag.error)
+        <input type="file" id="uploadFile" name="uploadFile" accept=".xls, .xlsx" required data-val="true" data-val-required="Seleccione Archivo(Excel)" />
+    </div>
+    <p>
+        <input type="submit" value="@Content.submit_CargaArchivo" />
+        <span class="link-txt back">@Html.ActionLink(Content.link_Regresar, "Index")</span>
+    </p>
+}

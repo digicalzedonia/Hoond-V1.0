@@ -1,0 +1,111 @@
+﻿@model Hoond.Models.Almacen
+@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="icon-edit"><h2>@Content.titulo_Editar Almacen</h2></div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<div class="grid">
+    <div class="grid_row">
+        @if(!ViewBag.isAdmin)
+        {
+            @Html.HiddenFor(model => model.idAlmacen)  
+        }
+        else
+        {
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idAlmacen)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.idAlmacen)
+                @Html.ValidationMessageFor(model => model.idAlmacen)
+            </div>
+        </div>
+        }
+        @*@Html.Action("InsertTipoAlmacen","Comun")*@
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idTipoAlmacen, "TipoAlmacen")
+            </div>
+            <div class="editor-field">
+                @*En caso de desencadenamineto cabiar esta linea indicando las entidadea a desencadenar separadas por coma *@
+                @*@Html.DropDownList("idTipoAlmacen", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'Entidad1,Entidad2')" })*@
+                @Html.DropDownList("idTipoAlmacen", String.Empty)
+                @Html.ValidationMessageFor(model => model.idTipoAlmacen)
+                @*Indicar el campo que va a retonar ala hacer la captura del formulario modal *@
+                <a id='name' href="#" onclick="OpenDialog('TipoAlmacen', 'Campo(s) a retornar')" class="addnew">@Content.link_nuevo</a>
+            </div>
+        </div>
+        @Html.HiddenFor(model => model.idEmpresa)   
+        @*@Html.Action("InsertSucursal","Comun")*@
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.idSucursal, "Sucursal")
+            </div>
+            <div class="editor-field">
+                @*En caso de desencadenamineto cabiar esta linea indicando las entidadea a desencadenar separadas por coma *@
+                @*@Html.DropDownList("idSucursal", null, String.Empty, new { @onchange = "LlenaSC(this.value, 'Entidad1,Entidad2')" })*@
+                @Html.DropDownList("idSucursal", String.Empty)
+                @Html.ValidationMessageFor(model => model.idSucursal)
+                @*Indicar el campo que va a retonar ala hacer la captura del formulario modal *@
+                <a id='name' href="#" onclick="OpenDialog('Sucursal', 'Campo(s) a retornar')" class="addnew">@Content.link_nuevo</a>
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.nombreAlmacen)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.nombreAlmacen)
+                @Html.ValidationMessageFor(model => model.nombreAlmacen)
+            </div>
+        </div>
+        @Html.HiddenFor(model => model.idUsuario_alta)   
+        @if(!ViewBag.isAdmin)
+        {
+            @Html.HiddenFor(model => model.fecha_alta)  
+        }
+        else
+        {
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.fecha_alta)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.fecha_alta)
+                @Html.ValidationMessageFor(model => model.fecha_alta)
+            </div>
+        </div>
+        }
+        @if(!ViewBag.isAdmin)
+        {
+            @Html.HiddenFor(model => model.activo)  
+        }
+        else
+        {
+        <div class="grid_item">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.activo)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.activo)
+                @Html.ValidationMessageFor(model => model.activo)
+            </div>
+        </div>
+        }
+    </div>
+    <div class="grid_row">
+        <div class="grid_item center">
+            <input type="submit" value="@Content.submit_Guardar" />
+        </div>
+        <div class="grid_item center">
+            <p class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</p>
+        </div>
+    </div>
+</div>
+}
+

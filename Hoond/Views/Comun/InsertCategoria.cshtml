@@ -1,0 +1,11 @@
+﻿@using Hoond.app_GlobalResources;
+@model Hoond.Models.Categoria
+<div id="DialogCategoria" class="PopubNewItem" title="@Content.titulo_CreaCategoria" style="display:none">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.descCategoria)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.descCategoria, new { @class = "uCase" })
+        @Html.ValidationMessageFor(model => model.descCategoria)
+    </div>
+</div>

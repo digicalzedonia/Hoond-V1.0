@@ -1,0 +1,356 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#
+var Model = (MvcTextTemplateHost)Host;
+var routePrefix = String.Empty;
+if (!String.IsNullOrWhiteSpace(Model.AreaName)) {
+    routePrefix = "/" + Model.AreaName;
+}
+routePrefix += "/" + Model.ControllerRootName + "/";
+#>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.Objects" #>
+<#@ import namespace="System.Linq" #>
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Linq.Expressions;
+using System.Linq.Dynamic;
+
+using CaptchaMvc.HtmlHelpers;
+using PagedList;
+
+<# if(MvcTextTemplateHost.NamespaceNeeded(Model.Namespace, Model.ModelType.Namespace)) { #>
+using <#= Model.ModelType.Namespace #>;
+<# } #>
+<# if(Model.ContextType.Namespace != Model.ModelType.Namespace && MvcTextTemplateHost.NamespaceNeeded(Model.Namespace, Model.ContextType.Namespace)) { #>
+using <#= Model.ContextType.Namespace #>;
+<# } #>
+
+namespace <#= Model.Namespace #>
+{
+<#
+    var modelName = Model.ModelType.Name;
+    var entitySetName = Model.EntitySetName;
+    var modelVariable = modelName.ToLowerInvariant();
+    var entitySetVariable = entitySetName.ToLowerInvariant();
+    var primaryKey = Model.PrimaryKeys[0];
+    var lambdaVar = modelVariable[0];
+    var isObjectContext = typeof(ObjectContext).IsAssignableFrom(Model.ContextType);
+#>
+    [Authorize]
+    
+    public class <#= Model.ControllerName #> : Controller
+    {
+        private <#= Model.ContextType.Name #> db = new <#= Model.ContextType.Name #>();
+        private Comun DatComun = new Comun();
+
+        //
+        // GET: <#= routePrefix #>
+
+        public ActionResult Index(string cmbCampo, string cmbPaginado, string sortField, string txtBusqueda, string msgError, int? page)
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User, "<#= entitySetName #>", "Index", false);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+            ViewBag.msgError = msgError;
+            ViewBag.isAdmin = User.isAdmin;
+            ViewBag.CurrentPage = cmbPaginado;
+            ViewBag.Id = string.Empty;
+            ViewBag.sortField = sortField;
+            if (sortField != null)
+            {
+                User.SortField = User.SortField == sortField ? sortField + "|desc" : sortField;
+                ViewBag.Id = User.SortField == sortField ? "sortDown" : "sortUp";
+            }
+            string[] field = String.IsNullOrEmpty(User.SortField) ? string.Empty.Split('|') : User.SortField.Split('|');
+            ViewBag.CurrentField = cmbCampo;
+            ViewBag.CurrentFilter = txtBusqueda;       
+<#  var includeExpressions = "";
+    if(isObjectContext) {
+        includeExpressions = String.Join("", Model.RelatedProperties.Values.Select(property => String.Format(".Include(\"{0}\")", property.PropertyName)));
+    }
+    else {
+        includeExpressions = String.Join("", Model.RelatedProperties.Values.Select(property => String.Format(".Include({0} => {0}.{1})", lambdaVar, property.PropertyName)));
+    }
+#>
+<# if(!String.IsNullOrEmpty(includeExpressions)) { #>
+            var Query = db.<#= entitySetName #><#= includeExpressions #>;
+<# } else { #>
+            var Query = db.<#= entitySetName #><#= includeExpressions #>;
+<# } #>
+			if(!User.isAdmin)
+				Query = Query.Where(q => q.activo == true);
+            Query = Query.Where(q => q.idEmpresa == User.idEmpresa);
+            if (!String.IsNullOrEmpty(txtBusqueda) && !String.IsNullOrEmpty(cmbCampo))
+            {
+                if (cmbCampo != "0")
+                    Query = Query.Where(cmbCampo + ".Contains(@0)", txtBusqueda);
+            }
+            if (!String.IsNullOrEmpty(sortField))
+            {
+                if (field.Length == 1)
+                    Query = Query.OrderBy(field[0]);
+                else
+                    Query = Query.OrderBy(field[0] + " descending");
+            }
+            else
+                Query = Query.OrderBy(q => q.fecha_alta);
+            int pageNumber = (page ?? 1);
+            int pageSize = DatComun.DefaultPage();
+            if (cmbPaginado != null)
+            {
+                if (cmbPaginado != "0")
+                    pageSize = Convert.ToInt32(cmbPaginado);
+                else
+                {
+                    pageSize = Query.ToList().Count;
+                    if (pageSize == 0)
+                        pageSize = DatComun.DefaultPage();
+                }
+            }
+            Session["user"] = User;
+            return View(Query.ToPagedList(pageNumber, pageSize));
+        }
+
+        //
+        // GET: <#= routePrefix #>Details/5
+
+        public ActionResult Details(<#= primaryKey.ShortTypeName #> id = <#= primaryKey.DefaultValue #>)
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User, "<#= entitySetName #>", "Index", false);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+            ViewBag.isAdmin = User.isAdmin;
+<# if(isObjectContext) { #>
+            <#= modelName #> <#= modelVariable #> = db.<#= entitySetName #>.Single(<#= lambdaVar #> => <#= lambdaVar #>.<#= primaryKey.Name #> == id);
+<# } else { #>
+            <#= modelName #> <#= modelVariable #> = db.<#= entitySetName #>.Find(id);
+<# } #>
+            if (<#= modelVariable #> == null)
+            {
+                return HttpNotFound();
+            }
+            return View(<#= modelVariable #>);
+        }
+
+        //
+        // GET: <#= routePrefix #>Create
+
+        public ActionResult Create()
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User, "<#= entitySetName #>", "Create", true);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+<# foreach (var property in Model.RelatedProperties.Values) { 
+if(property.ForeignKeyPropertyName != "idUsuario_alta" && property.ForeignKeyPropertyName != "idEmpresa"){ #>
+            ViewBag.<#= property.ForeignKeyPropertyName #> = new SelectList(db.<#= property.EntitySetName #>.Where(e => e.activo == true && e.idEmpresa == User.idEmpresa), "<#= property.PrimaryKey #>", "<#= property.DisplayPropertyName #>");
+<# } } #>
+            return View();
+        }
+
+        //
+        // POST: <#= routePrefix #>Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(<#= modelName #> <#= modelVariable #>)
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+            if (ModelState.IsValid)
+            {
+                <#= modelVariable #>.id<#= modelName #>  = DatComun.GetId(1);
+                <#= modelVariable #>.idUsuario_alta  = User.idUsuario;
+                <#= modelVariable #>.idEmpresa = User.idEmpresa;
+                <#= modelVariable #>.fecha_alta = DateTime.Now;
+                <#= modelVariable #>.activo = true;
+<# if(primaryKey.Type == typeof(Guid)) { #>
+                <#= modelVariable #>.<#= primaryKey.Name #> = Guid.NewGuid();
+<# } #>
+<# if(isObjectContext) { #>
+                db.<#= entitySetName #>.AddObject(<#= modelVariable #>);
+<# } else { #>
+                db.<#= entitySetName #>.Add(<#= modelVariable #>);
+<# } #>
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+<# foreach (var property in Model.RelatedProperties.Values) { 
+if(property.ForeignKeyPropertyName != "idUsuario_alta" && property.ForeignKeyPropertyName != "idEmpresa"){ #>
+            ViewBag.<#= property.ForeignKeyPropertyName #> = new SelectList(db.<#= property.EntitySetName #>.Where(e => e.activo == true && e.idEmpresa == User.idEmpresa), "<#= property.PrimaryKey #>", "<#= property.DisplayPropertyName #>", <#= modelVariable #>.<#= property.ForeignKeyPropertyName #>);
+<# } } #>
+            return View(<#= modelVariable #>);
+        }
+
+        //
+        // GET: <#= routePrefix #>Edit/5
+
+        public ActionResult Edit(<#= primaryKey.ShortTypeName #> id = <#= primaryKey.DefaultValue #>)
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User, "<#= entitySetName #>", "Create", true);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+            ViewBag.isAdmin = User.isAdmin;
+<# if(isObjectContext) { #>
+            <#= modelName #> <#= modelVariable #> = db.<#= entitySetName #>.Single(<#= lambdaVar #> => <#= lambdaVar #>.<#= primaryKey.Name #> == id);
+<# } else { #>
+            <#= modelName #> <#= modelVariable #> = db.<#= entitySetName #>.Find(id);
+<# } #>
+            if (<#= modelVariable #> == null)
+            {
+                return HttpNotFound();
+            }
+<# foreach (var property in Model.RelatedProperties.Values) { 
+if(property.ForeignKeyPropertyName != "idUsuario_alta" && property.ForeignKeyPropertyName != "idEmpresa"){ #>
+            ViewBag.<#= property.ForeignKeyPropertyName #> = new SelectList(db.<#= property.EntitySetName #>.Where(e => e.activo == true && e.idEmpresa == User.idEmpresa), "<#= property.PrimaryKey #>", "<#= property.DisplayPropertyName #>", <#= modelVariable #>.<#= property.ForeignKeyPropertyName #>);
+<# } }#>
+            return View(<#= modelVariable #>);
+        }
+
+        //
+        // POST: <#= routePrefix #>Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(<#= modelName #> <#= modelVariable #>)
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+            if (ModelState.IsValid)
+            {
+                DatComun.CreateLog("<#= modelName #>", "U", <#= modelVariable #>.id<#= modelName #>, User.idUsuario);
+<# if(isObjectContext) { #>
+                db.<#= entitySetName #>.Attach(<#= modelVariable #>);
+                db.ObjectStateManager.ChangeObjectState(<#= modelVariable #>, EntityState.Modified);
+<# } else { #>
+                db.Entry(<#= modelVariable #>).State = EntityState.Modified;
+<# } #>
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+<# foreach (var property in Model.RelatedProperties.Values) { 
+if(property.ForeignKeyPropertyName != "idUsuario_alta" && property.ForeignKeyPropertyName != "idEmpresa"){ #>
+            ViewBag.<#= property.ForeignKeyPropertyName #> = new SelectList(db.<#= property.EntitySetName #>.Where(e => e.activo == true && e.idEmpresa == User.idEmpresa), "<#= property.PrimaryKey #>", "<#= property.DisplayPropertyName #>", <#= modelVariable #>.<#= property.ForeignKeyPropertyName #>);
+<# }} #>
+            return View(<#= modelVariable #>);
+        }
+
+        //
+        // GET: <#= routePrefix #>Delete/5
+
+        public ActionResult Delete(<#= primaryKey.ShortTypeName #> id = <#= primaryKey.DefaultValue #>)
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User, "<#= entitySetName #>", "Create", true);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+            ViewBag.isAdmin = User.isAdmin;
+<# if(isObjectContext) { #>
+            <#= modelName #> <#= modelVariable #> = db.<#= entitySetName #>.Single(<#= lambdaVar #> => <#= lambdaVar #>.<#= primaryKey.Name #> == id);
+<# } else { #>
+            <#= modelName #> <#= modelVariable #> = db.<#= entitySetName #>.Find(id);
+<# } #>
+            if (<#= modelVariable #> == null)
+            {
+                return HttpNotFound();
+            }
+            return View(<#= modelVariable #>);
+        }
+
+        //
+        // POST: <#= routePrefix #>Delete/5
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(<#= primaryKey.ShortTypeName #> id)
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+<# if(isObjectContext) { #>
+            <#= modelName #> <#= modelVariable #> = db.<#= entitySetName #>.Single(<#= lambdaVar #> => <#= lambdaVar #>.<#= primaryKey.Name #> == id);
+            db.<#= entitySetName #>.DeleteObject(<#= modelVariable #>);
+<# } else { #>
+            <#= modelName #> <#= modelVariable #> = db.<#= entitySetName #>.Find(id);
+<# } #>
+            DatComun.CreateLog("<#= modelName #>", "D", id, User.idUsuario);
+            <#= modelVariable #>.activo = false;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult DeleteM(decimal[] ids)
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User, "<#= entitySetName #>", "Create", true);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+            ViewBag.isAdmin = User.isAdmin;
+            ViewBag.Error = string.Empty;
+            if (ids != null)
+            {
+                var id = ids.Cast<decimal>().ToList();
+<# if(!String.IsNullOrEmpty(includeExpressions)) { #>
+                var Query = db.<#= entitySetName #><#= includeExpressions #>.Where(q => id.Contains(q.id<#= modelName #>));
+<# } else { #>
+                var Query = db.<#= entitySetName #><#= includeExpressions #>.Where(q => id.Contains(q.id<#= modelName #>));
+<# } #>
+                return View(Query.ToList());
+            }
+            else
+                return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult DeleteConfirmedM(decimal[] ids)
+        {
+            UserLogin User = (UserLogin)Session["user"];
+            Dictionary<string, string> url = DatComun.ValidaSession(ref User);
+            if (url["Action"] != string.Empty)
+                return RedirectToAction(url["Action"], url["Controller"], new { msgError = url["msgError"] });
+            if (this.IsCaptchaValid(string.Empty))
+            {
+                <#= modelName #> Item;
+                for (int i = 0; i < ids.Length; i++)
+                {
+                    Item = db.<#= modelName #>.Find(ids[i]);
+                    DatComun.CreateLog("<#= modelName #>", "D", ids[i], User.idUsuario);
+                    Item.activo = false;
+                    db.SaveChanges();
+                }
+                return RedirectToAction("Index");
+            }
+            ViewBag.isAdmin = User.isAdmin;
+            ViewBag.Error = app_GlobalResources.Content.msg_ValCapcha;
+            var id = ids.Cast<decimal>().ToList();
+<# if(!String.IsNullOrEmpty(includeExpressions)) { #>
+            var Query = db.<#= entitySetName #><#= includeExpressions #>.Where(q => id.Contains(q.id<#= modelName #>));
+<# } else { #>
+            var Query = db.<#= entitySetName #><#= includeExpressions #>.Where(q => id.Contains(q.id<#= modelName #>));
+<# } #>
+            return View("DeleteM", Query.ToList());
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
+        }
+    }
+}

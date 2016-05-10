@@ -1,0 +1,19 @@
+﻿@using Hoond.app_GlobalResources;
+@{
+    ViewBag.Title = "Index";
+}
+<h2>@Content.index</h2>
+@using (Html.BeginForm("Index", "Config", FormMethod.Get))
+{
+    <p>
+        Empresa: @Html.DropDownList("cmbEmpresa")
+        <input type="submit" value="Aplicar" />
+    </p>
+}
+<ul>
+    <li>@Html.ActionLink("Cambiar Contraseña", "CambioPassw", "Login")</li>
+    <li>@Html.ActionLink("English", "Cambiar", "Config", new { Idioma = "en-US" }, null)</li>
+    <li>@Html.ActionLink("español Mexico", "Cambiar", "Config", new { Idioma = "es-MX" }, null)</li>
+    <li>@Html.ActionLink("español España", "Cambiar", "Config", new { Idioma = "es-ES" }, null)</li>
+    <li>@DateTime.Now.ToString()</li>
+</ul>

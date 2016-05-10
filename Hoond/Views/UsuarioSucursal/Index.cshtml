@@ -1,0 +1,120 @@
+﻿@model PagedList.IPagedList<Hoond.Models.UsuarioSucursal>
+@using Hoond.app_GlobalResources;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+<h2>@Content.titulo_Listado UsuarioSucursal</h2>
+@if (!String.IsNullOrEmpty(ViewBag.msgError))
+{
+    @Html.Action("Mensaje", "Comun", new { msgError = ViewBag.msgError })
+}
+<p class="link-txt create">
+    @Html.ActionLink(Content.linkCrear, "Create")
+</p>
+@using (Html.BeginForm("Index", "UsuarioSucursal", FormMethod.Get))
+{
+    //campos = (indicar los campos a realizar busqueda separados por coma)
+    //descripcion = (indicar la descripción de los campos separados por coma)
+    @Html.Action("Buscar", "Comun", new { Campos = "", Descripcion = "" })
+}
+@using (Html.BeginForm("DeleteM", "UsuarioSucursal", FormMethod.Post))
+{
+    <input type="submit" value="@Content.submit_EliminarM" id="cmdEliminar" class="delete-table" />
+	<table>
+		<thead>
+		<tr>
+			<th>
+                <input type="checkbox" id="idH"  />
+            </th>
+	        <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "Sucursal.nombreSucursal") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().Sucursal.nombreSucursal).ToString(), "Index", new { sortField = "Sucursal.nombreSucursal", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>		
+	        <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "Usuario1.nombreUsuario") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().Usuario1.nombreUsuario).ToString(), "Index", new { sortField = "Usuario1.nombreUsuario", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>		
+	        <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "TipoUsuarioSucursal.descTipoUsuarioSucursal") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().TipoUsuarioSucursal.descTipoUsuarioSucursal).ToString(), "Index", new { sortField = "TipoUsuarioSucursal.descTipoUsuarioSucursal", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>		
+	        @if(ViewBag.isAdmin)
+            {
+            <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "Usuario.nombreUsuario") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().Usuario.nombreUsuario).ToString(), "Index", new { sortField = "Usuario.nombreUsuario", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+            }
+            @if(ViewBag.isAdmin)
+            {
+            <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "fecha_alta") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().fecha_alta).ToString(), "Index", new { sortField = "fecha_alta", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+            }
+            @if(ViewBag.isAdmin)
+            {
+            <th data-hide="phone">
+                <div id="@if(ViewBag.sortField == "activo") { @ViewBag.Id }">
+                    @Html.ActionLink(@Html.DisplayNameFor(model => model.First().activo).ToString(), "Index", new { sortField = "activo", txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField })
+                </div>
+            </th>
+            }
+    		<th data-hide="phone"></th>
+		</tr>
+		</thead>
+		<tbody>	
+	@foreach (var item in Model) {
+		<tr>
+			<td>
+                <input type="checkbox" name="ids" value="@item.idSucursal" />
+            </td>
+	        <td>
+                @Html.DisplayFor(modelItem => item.Sucursal.nombreSucursal)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.Usuario1.nombreUsuario)
+            </td>  
+	        <td>
+                @Html.DisplayFor(modelItem => item.TipoUsuarioSucursal.descTipoUsuarioSucursal)
+            </td>  
+	        @if(ViewBag.isAdmin)
+            {
+		    <td>
+				@Html.DisplayFor(modelItem => item.Usuario.nombreUsuario)
+			</td>
+            }
+            @if(ViewBag.isAdmin)
+            {
+		    <td>
+				@Html.DisplayFor(modelItem => item.fecha_alta)
+			</td>
+            }
+            @if(ViewBag.isAdmin)
+            {
+		    <td>
+				@Html.DisplayFor(modelItem => item.activo)
+			</td>
+            }
+    		<td>
+				<div class="buttons">
+					<a href="@Url.Action("Edit", new { id = item.idSucursal, idUsuario = item.idUsuario })"><div class="edit"></div></a>
+					<a href="@Url.Action("Details", new { id = item.idSucursal, idUsuario = item.idUsuario })"><div class="details"></div></a>
+					<a href="@Url.Action("Delete", new { id = item.idSucursal, idUsuario = item.idUsuario })"><div class="delete"></div></a>
+				</div>
+			</td>
+		</tr>
+	}
+		</tbody>
+	</table>
+}
+<div class="pagination">
+    @Content.msg_Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) @Content.msg_Pageof @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, txtBusqueda = ViewBag.CurrentFilter, cmbPaginado = ViewBag.CurrentPage, cmbCampo = ViewBag.CurrentField }))
+</div>

@@ -1,0 +1,43 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@using Hoond.app_GlobalResources;
+@using CaptchaMvc;
+
+@{
+    ViewBag.Title = Content.Titulo_MantenimientoCatalogo;
+}
+
+@if (ViewBag.TerminoProceso == "1")
+{
+     <h2>@Content.msg_ProcesoTerminado</h2>
+    
+    using (Html.BeginForm("Index", "MantenimientoCatalogos", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+           {
+             @Html.AntiForgeryToken()
+             @Html.ValidationSummary(true)
+              <h2>@Content.msg_DescargaCatalogosnuevo</h2>
+              <div>@Content.msg_SeleccioneExtension</div>
+              @Html.DropDownList("TipoCatDescarga")
+              <input type="submit" name="cmdsubmit" value="@Content.submitDescargaCatalogo" /><br />
+           }
+    
+}
+else
+{
+     using (Html.BeginForm())
+         {
+        <input type="hidden" value="@Session["catalogo"]" id="Catalogo" name="Catalogo" />
+          <h2>Procesa</h2>
+          <h2>@Content.msg_PregDescargaCatalogos</h2>
+
+          @Html.Captcha(Content.MSJ_CapthaRefresh, Content.MSJ_CapthaLetras, 5)
+          <br />
+          <p class="Error">  @ViewBag.ErrMessage </p>
+
+         <input type="submit" id="cmdActualizar" name="cmdActualizar" value="@Content.submitActualizarCatalogo" />
+         }
+}
+<div>
+    <span class="link-txt back">@Html.ActionLink(Resources.Content.linkRegresar, "Index")</span>
+</div>
+
+ 

@@ -1,0 +1,61 @@
+﻿@model Hoond.Models.Ruta
+@using Hoond.app_GlobalResources;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="icon-details"><h2>@Content.Detalle_EditarRuta</h2></div>
+
+
+    <div class="grid">
+        <div class="grid_row md">
+        
+           
+
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.descRuta)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.descRuta)
+                </div>
+            </div>
+
+        
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.direccion)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.direccion)
+                </div>
+            </div>
+
+        </div>
+        <div class="grid_row md">
+
+            <div class="grid_item">
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.activo)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.activo)
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<br />
+
+  <div class="grid_row">
+    <div class="grid_item center">
+        <span class="link-txt editr">@Html.ActionLink(Content.linkEditar, "Edit", new { id = Model.idRuta })</span>
+    </div>
+    <div class="grid_item center">
+        <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+    </div>
+</div>
+</p>

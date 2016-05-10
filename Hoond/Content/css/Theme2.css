@@ -1,0 +1,189 @@
+﻿/*Style*/
+body{
+    background-color: #4E515D;
+  color:#fff;
+}
+header{
+  color:#4E515D;
+  background-color: #fff;
+}
+.avatar{
+    border:1px solid #4E515D;
+}
+.menu{
+  background-color: #F2F2F2;
+}
+footer{
+    background-color: #000;
+  color:#fff;
+}
+hr{
+    background-color: #fff;
+}
+h2:before {
+    background-image: url(../images/iconosH2-2.png);
+}
+.link-txt, .link-txt a, .link-txt a:visited{
+    color:#fff;
+}
+.link-txt a:after {
+    background-image: url(../images/icons-txt-2.png);
+ }
+
+::-moz-selection{
+    background:#98E5DE;
+}
+
+::selection{
+    background:#98E5DE;
+}
+
+
+
+/*Accordion*/
+
+.menu nav ul li a{
+  color: rgba(25, 25, 25, 1);
+}
+.menu nav::-webkit-scrollbar-thumb:vertical {
+background-color: #fff;
+}
+.sub-menu{
+	background-color: rgba(104, 212, 205, 0.5);
+}
+.accordion > li:hover > a,
+.accordion > li:target > a,
+.accordion > li > a.active {
+	background-color: #68D4CD;
+	color:#191919;
+}
+.sub-menu > li:hover > a,
+.sub-menu > li:target > a,
+.sub-menu > li > a.active {
+	background-color: rgba(104, 212, 205, 0.1);
+	color:#191919;
+}
+.submenu2{
+	background-color: rgba(245, 245, 245, 0.4);
+	text-align: left;
+	color: rgba(25, 25, 25, 0.75);
+
+}
+.accordion > li > a:before {
+	background-image: url(../images/icons-2.png);
+}
+
+
+/*Forms*/
+
+label, .display-label{
+    color:#fff;
+}
+input, textarea, select {
+    background-color: #f5f5f5;
+    border: 1px solid #fff;
+    color:#4E515D;
+}
+button, .button, input[type="submit"]{
+	background-color:#68D4CD;
+    color:#fff;
+}
+.table{
+	color:#737579;
+}
+table {
+    background-color: #fff;
+     color:#505259;
+}
+td, th {
+    border: 1px solid #C9C9C9;
+}
+th {
+    background-color: #a4a5a8;
+    color: #fff;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    border: 1px solid #DBDBDB;
+}
+
+input[type="radio"]:not(:disabled):hover,
+input[type="checkbox"]:not(:disabled):hover {
+    border-color:#DBDBDB;
+}
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+    border-color:#DBDBDB
+}
+input[type="checkbox"]:checked:before {
+    color: #505259;
+}
+.edit{
+    background-image:url(../images/edit-2.png);
+}
+.details{
+    background-image:url(../images/detail-2.png);
+}
+.delete{
+    background-image:url(../images/delete-2.png);
+}
+
+.detail-list div div {
+    background-color: #fff;
+}
+
+.detail-list div div:first-child {
+    border-bottom:1px solid #e1e1e1;
+}
+.detail-list .display-label{
+    background-color:#f5f7f8;
+}
+
+input[type=text]:focus, textarea:focus, input[type="checkbox"]:focus, input[type="radio"], select:focus, option:focus{
+  border: 2px solid #68D4CD;
+}
+
+table tr:hover{
+    background-color:rgba(104, 212, 205, 0.16);
+}
+
+tfoot tr:hover{
+    background-color:inherit;
+}
+
+/*Footable*/
+.footable-odd {
+  background-color: #f6f6f6;
+  /*background-color: rgba(139, 215, 144, 0.1);*/
+}
+.pagination ul > li a{
+  color:#505259;
+}
+.pagination ul > .active > a{
+  background-color:#C9C9C9;
+  color:#fff;
+}
+.footable.breakpoint > tbody > tr > td > span.footable-toggle {
+  color: #888888;
+}
+.footable.breakpoint > tbody > tr > td.footable-cell-detail {
+    background: #eee;
+}
+
+/*Hamburger*/
+.c-hamburger span {
+  background: #4E515D;
+}
+.c-hamburger span::before,
+.c-hamburger span::after {
+  background-color: #4E515D;
+}
+.c-hamburger--htx.is-active span::before {
+  background-color: #4E515D;
+}
+.c-hamburger--htx.is-active span::after {
+  background-color: #4E515D;
+}
+
+
+

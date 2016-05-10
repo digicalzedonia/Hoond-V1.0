@@ -1,0 +1,285 @@
+﻿@model Hoond.Models.Factura
+@using Hoond.app_GlobalResources;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="icon-create"><h2>@Content.titulo_CrearFacturas</h2></div>
+
+@using (Html.BeginForm("LeerXML", "Factura", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div>
+     @Content.titulo_AltasFacturasXML <br>
+
+        @Html.Raw(ViewBag.error) <br>
+
+        <div>@Content.msg_SeleccioneArchivoXML</div> 
+        <input type="file" id="XMLfiles" name="XMLfiles" required data-val="true" data-val-required="Seleccione XML" /> <br />
+        <div>@Content.msg_SeleccioneArchivoPDF</div>
+        <input type="file" id="PDFfiles" name="PDFfiles"  data-val="true" data-val-required="Seleccione PDF" />
+        <br />
+        <input type="submit" id="WriteData" value="@Content.titulo_Importar" title="@Content.titulo_Importar" />
+
+    </div>
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+  <div><br> @Content.titulo_AltasFacturasIndividuales <br></div> 
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.serie)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.serie)
+            @Html.ValidationMessageFor(model => model.serie)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.foio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.foio)
+            @Html.ValidationMessageFor(model => model.foio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaFactura)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaFactura)
+            @Html.ValidationMessageFor(model => model.fechaFactura)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.moneda)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.moneda)
+            @Html.ValidationMessageFor(model => model.moneda)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.subtotal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.subtotal)
+            @Html.ValidationMessageFor(model => model.subtotal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tasaIVA)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tasaIVA)
+            @Html.ValidationMessageFor(model => model.tasaIVA)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.importeIVA)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.importeIVA)
+            @Html.ValidationMessageFor(model => model.importeIVA)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.total)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.total)
+            @Html.ValidationMessageFor(model => model.total)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorRfc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorRfc)
+            @Html.ValidationMessageFor(model => model.emisorRfc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorNombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorNombre)
+            @Html.ValidationMessageFor(model => model.emisorNombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorCalle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorCalle)
+            @Html.ValidationMessageFor(model => model.emisorCalle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorNoExterior)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorNoExterior)
+            @Html.ValidationMessageFor(model => model.emisorNoExterior)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorNoInterior)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorNoInterior)
+            @Html.ValidationMessageFor(model => model.emisorNoInterior)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorColonia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorColonia)
+            @Html.ValidationMessageFor(model => model.emisorColonia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorLocalidad)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorLocalidad)
+            @Html.ValidationMessageFor(model => model.emisorLocalidad)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorMunicipio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorMunicipio)
+            @Html.ValidationMessageFor(model => model.emisorMunicipio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorEstado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorEstado)
+            @Html.ValidationMessageFor(model => model.emisorEstado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorPais)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorPais)
+            @Html.ValidationMessageFor(model => model.emisorPais)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emisorCP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emisorCP)
+            @Html.ValidationMessageFor(model => model.emisorCP)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorRfc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorRfc)
+            @Html.ValidationMessageFor(model => model.receptorRfc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorNombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorNombre)
+            @Html.ValidationMessageFor(model => model.receptorNombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorCalle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorCalle)
+            @Html.ValidationMessageFor(model => model.receptorCalle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorNoExterior)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorNoExterior)
+            @Html.ValidationMessageFor(model => model.receptorNoExterior)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorNoInterior)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorNoInterior)
+            @Html.ValidationMessageFor(model => model.receptorNoInterior)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorColonia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorColonia)
+            @Html.ValidationMessageFor(model => model.receptorColonia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorLocalidad)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorLocalidad)
+            @Html.ValidationMessageFor(model => model.receptorLocalidad)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorMunicipio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorMunicipio)
+            @Html.ValidationMessageFor(model => model.receptorMunicipio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorEstado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorEstado)
+            @Html.ValidationMessageFor(model => model.receptorEstado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorPais)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorPais)
+            @Html.ValidationMessageFor(model => model.receptorPais)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.receptorCP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.receptorCP)
+            @Html.ValidationMessageFor(model => model.receptorCP)
+        </div>
+
+        <p>
+            <div class="center"><input type="submit" value="@Content.submit_Crear" /></div>
+        </p>
+}
+
+<br />
+
+    <div>
+        <span class="link-txt back">@Html.ActionLink(Content.linkRegresar, "Index")</span>
+    </div>

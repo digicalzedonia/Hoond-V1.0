@@ -1,0 +1,88 @@
+﻿.form:last-child {
+  margin-bottom: 0;
+}
+
+.grid_item{
+    padding:.75em;
+    display:inline-block;
+    margin:0;
+}
+
+/*
+.grid {
+}
+
+.grid_row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.grid_item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: .75em;
+
+}
+
+.column{
+  display:flex;
+  -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+*/
+.nest{
+  padding:0;
+}
+
+.td-fixed{
+    width:9em;
+    max-width:9em;
+}
+
+.nest-combo{
+    max-width:22em;
+}
+
+
+@media all and (min-width: 480px) {
+  .sm {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+
+  }
+
+}
+@media all and (min-width: 720px) {
+  .md {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+
+  }
+
+
+}
+@media all and (min-width: 960px) {
+  .lg {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
